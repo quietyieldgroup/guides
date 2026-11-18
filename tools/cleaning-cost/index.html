@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cleaning cost per hour calculator (award rates 2026-27)</title><link rel="canonical" href="https://quietyieldgroup.github.io/guides/tools/cleaning-cost/"><meta property="og:type" content="website"><meta property="og:site_name" content="QuietYieldGroup Guides"><meta property="og:title" content="Cleaning cost per hour calculator (award rates 2026-27)"><meta property="og:description" content="Free calculator for Australian cleaning businesses: true cost of a staff hour under the Cleaning Services Award from 1 July 2026, plus a price per hour."><meta property="og:url" content="https://quietyieldgroup.github.io/guides/tools/cleaning-cost/"><meta property="og:image" content="https://quietyieldgroup.github.io/guides/cleaning-kit/cover.png"><meta property="og:image:width" content="1280"><meta property="og:image:height" content="720"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://quietyieldgroup.github.io/guides/cleaning-kit/cover.png">
+<meta name="description" content="Free calculator for Australian cleaning businesses: true cost of a staff hour under the Cleaning Services Award from 1 July 2026, plus a price per hour.">
+<meta name="robots" content="index,follow">
+<style>
+:root{--ink:#1d2530;--muted:#5a6573;--line:#d9dee5;--bg:#f6f7f9;--card:#fff;--accent:#0b5d4b;--accent2:#e7f3ef;--warn:#8a4b00;--warnbg:#fff5e6}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+main{max-width:680px;margin:0 auto;padding:18px 16px 40px}
+h1{font-size:1.55rem;line-height:1.25;margin:.4em 0 .4em}
+h2{font-size:1.2rem;margin:1.6em 0 .5em}
+h3{font-size:1.05rem;margin:1.2em 0 .4em}
+p{margin:.5em 0}
+a{color:var(--accent)}
+.intro{color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:14px 0}
+label{display:block;font-weight:600;margin:14px 0 6px}
+.hint{display:block;font-weight:400;color:var(--muted);font-size:.92rem;margin-top:2px}
+input[type=number],input[type=date],input[type=text],select{width:100%;font:inherit;padding:12px;border:1px solid #b8c0cb;border-radius:8px;background:#fff;min-height:48px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:10px 0;font-weight:400;margin:0}
+.opt input{width:22px;height:22px;margin-top:2px;flex:0 0 auto}
+button{font:inherit;font-weight:600;width:100%;min-height:50px;margin-top:18px;border:0;border-radius:10px;background:var(--accent);color:#fff;cursor:pointer}
+button.secondary{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.result{background:var(--accent2);border:1px solid #b9dccf;border-radius:12px;padding:16px;margin:16px 0}
+.result[hidden]{display:none}
+.result h2{margin-top:0}
+.big{font-size:1.35rem;font-weight:700}
+.note{background:var(--warnbg);border-left:4px solid var(--warn);padding:10px 12px;border-radius:6px;margin:12px 0;font-size:.95rem}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.95rem}
+th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+td.num,th.num{text-align:right;white-space:nowrap}
+tr.tot td{font-weight:700}
+.asat{font-size:.88rem;color:var(--muted)}
+.paid{background:var(--card);border:2px solid var(--accent);border-radius:12px;padding:16px;margin:22px 0}
+.paid .price{font-size:1.25rem;font-weight:700}
+.cta{display:block;text-align:center;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:14px;border-radius:10px;margin:12px 0 8px}
+.cta2{display:block;text-align:center;color:var(--accent);font-weight:600;padding:10px}
+.offer{font-weight:600}
+.disclaimer{font-size:.92rem;color:var(--muted);border-top:1px solid var(--line);margin-top:26px;padding-top:12px}
+.sources{font-size:.9rem;overflow-wrap:anywhere}
+.sources li{margin:6px 0}
+fieldset{border:0;padding:0;margin:0}
+legend{font-weight:700;font-size:1.05rem;margin:18px 0 0;padding:0}
+.err{color:#9c0006;font-weight:600}
+footer{font-size:.85rem;color:var(--muted);margin-top:20px}
+@media (min-width:700px){body{font-size:17px}h1{font-size:1.9rem}}
+</style>
+</head>
+<body>
+<main>
+<h1>Cleaning cost per hour calculator: Free tool</h1>
+<p class="intro">For Australian cleaning businesses. See what one hour of a cleaner's time really costs under the Cleaning Services Award 2020 rates from 1 July 2026, with super, leave and on-costs, and a suggested price per hour ex and inc GST.</p>
+
+<form class="card" id="f" onsubmit="return false" novalidate>
+  <label for="staffYN">Who does the cleaning?</label>
+  <select id="staffYN">
+    <option value="Yes" selected>Employees</option>
+    <option value="No">Me (the owner)</option>
+  </select>
+
+  <fieldset id="staffBox">
+    <legend>Your staff</legend>
+    <label for="level">Award classification level
+      <span class="hint">Cleaning Services Award levels 1 to 3. Check the award for which level fits your staff.</span></label>
+    <select id="level">
+      <option value="1" selected>Level 1</option>
+      <option value="2">Level 2</option>
+      <option value="3">Level 3</option>
+    </select>
+
+    <label for="type">Employment type</label>
+    <select id="type">
+      <option value="Full-time">Full-time</option>
+      <option value="Part-time">Part-time (15% allowance on each ordinary hour)</option>
+      <option value="Casual" selected>Casual (25% loading)</option>
+    </select>
+
+    <p class="hint" style="margin-top:14px">Share of staff hours worked at penalty times (%). The rest count as Monday to Friday daytime hours.</p>
+    <label for="pEL">Mon-Fri shift starting before 6am or finishing after 6pm, %</label>
+    <input type="number" id="pEL" inputmode="decimal" min="0" max="100" step="any" value="0">
+    <label for="pNight">Non-rotating shift finishing after midnight and by 8am, %</label>
+    <input type="number" id="pNight" inputmode="decimal" min="0" max="100" step="any" value="0">
+    <label for="pSat">Saturday, %</label>
+    <input type="number" id="pSat" inputmode="decimal" min="0" max="100" step="any" value="10">
+    <label for="pSun">Sunday, %</label>
+    <input type="number" id="pSun" inputmode="decimal" min="0" max="100" step="any" value="0">
+    <label for="pPH">Public holidays, %</label>
+    <input type="number" id="pPH" inputmode="decimal" min="0" max="100" step="any" value="0">
+
+    <label for="wc">Workers' compensation premium, % of wages
+      <span class="hint">Enter your own. Employers must get workers' compensation insurance from an authorised insurer, and the laws vary by state and territory.</span></label>
+    <input type="number" id="wc" inputmode="decimal" min="0" step="any" value="0">
+
+    <label for="phDays">Paid public holidays a year that fall on staff working days
+      <span class="hint">Enter your own: public holidays differ by state and territory. Used for full-time and part-time staff only.</span></label>
+    <input type="number" id="phDays" inputmode="numeric" min="0" step="1" value="0">
+
+    <label for="other">Other on-costs, % of wages
+      <span class="hint">Optional: payroll tax if it applies to you, training, uniforms.</span></label>
+    <input type="number" id="other" inputmode="decimal" min="0" step="any" value="0">
+
+    <label for="leaveOv">Leave on-cost %, your own figure (optional)
+      <span class="hint">Leave blank to use the calculated figure. Not used for casuals.</span></label>
+    <input type="number" id="leaveOv" inputmode="decimal" min="0" step="any" value="">
+  </fieldset>
+
+  <fieldset>
+    <legend>You and your overheads</legend>
+    <label for="ownerPay">Your target hourly pay (before tax), $
+      <span class="hint">Used for your admin time, and as the labour cost if you do the cleaning yourself.</span></label>
+    <input type="number" id="ownerPay" inputmode="decimal" min="0" step="any" value="40">
+    <label for="adminHrs">Your unbilled admin hours a month (quoting, invoicing, marketing)</label>
+    <input type="number" id="adminHrs" inputmode="decimal" min="0" step="any" value="20">
+    <label for="ins">Insurance a month, $</label>
+    <input type="number" id="ins" inputmode="decimal" min="0" step="any" value="100">
+    <label for="soft">Software a month, $</label>
+    <input type="number" id="soft" inputmode="decimal" min="0" step="any" value="50">
+    <label for="fixed">Other fixed costs a month, $ (phone, advertising, equipment)</label>
+    <input type="number" id="fixed" inputmode="decimal" min="0" step="any" value="150">
+    <label for="jobs">Jobs a month</label>
+    <input type="number" id="jobs" inputmode="numeric" min="0" step="any" value="40">
+    <label for="jobHrs">Cleaning hours per job (total labour hours on site)
+      <span class="hint">Two cleaners for 1.5 hours = 3 hours.</span></label>
+    <input type="number" id="jobHrs" inputmode="decimal" min="0" step="any" value="3">
+    <p class="hint">Example figures are filled in. Replace them with your own. If you are registered for GST, enter costs excluding GST.</p>
+  </fieldset>
+
+  <fieldset>
+    <legend>Pricing</legend>
+    <label for="margin">Profit margin, % of the ex-GST price
+      <span class="hint">Margin, not mark-up: a 15% margin means $15 profit in every $100 of price. Between 0 and 90.</span></label>
+    <input type="number" id="margin" inputmode="decimal" min="0" max="90" step="any" value="15">
+    <label for="gst">Registered for GST?</label>
+    <select id="gst">
+      <option value="Yes" selected>Yes: add 10% GST</option>
+      <option value="No">No: don't charge GST</option>
+    </select>
+  </fieldset>
+
+  <button type="button" id="go">Work out my cost per hour</button>
+</form>
+
+<section class="result" id="out" hidden aria-live="polite"></section>
+
+<section class="paid">
+  <h2>Want to price whole jobs, not just hours?</h2>
+  <p>The Australian Cleaning Business Pricing Kit (FY2026-27) uses the same method in an Excel calculator with real formulas you can follow. It adds travel time, supplies and vehicle costs to work out the cost of a typical job, a suggested price ex and inc GST, how many jobs a month you need to break even, and a GST-threshold warning. Its Quick quote sheet prices domestic and end-of-lease cleans by room count or hours, and offices by square metres and visits a week, applying the award's minimum shift for part-time and casual staff.</p>
+  <p>It comes with a 13-page PDF guide (how to use it, a worked example, where prices leak), a fill-in quote template, domestic, end-of-lease and office checklists, an agreement clauses checklist, and ABN, GST, super, insurance and TPAR basics with official links.</p>
+  <p class="price">A$35</p>
+  <a class="cta" href="/guides/cleaning-kit/">See the Cleaning Business Pricing Kit (A$35)</a>
+  <a class="cta2" href="/guides/cleaning-kit/free-preview.pdf">Read the free preview (PDF)</a>
+  <p class="offer">Launch offer: 25% off with code LAUNCH25 until 30 November 2026.</p>
+</section>
+
+<p class="disclaimer">General information, not advice; check with the Fair Work Ombudsman (pay rates and which award covers you) and the ATO (super). The Cleaning Services Award covers "the business of providing cleaning services under a contract" (cl. 4.2): check that it covers your business. The Fair Work pay guide says: "If our information is inconsistent with the award, then the award applies." This tool runs only in your browser: nothing you enter is saved or sent anywhere. Not produced or endorsed by any government agency.</p>
+
+<h2>Sources</h2>
+<ul class="sources">
+  <li><a href="https://awards.fairwork.gov.au/MA000022.html">Cleaning Services Award 2020 [MA000022]</a> (Fair Work Commission, consolidated to 1 July 2026; read 17 November 2026)</li>
+  <li><a href="https://www.fairwork.gov.au/pay-and-wages/minimum-wages/pay-guides">Pay guides</a> and the <a href="https://calculate.fairwork.gov.au/payguides/fairwork/ma000022/pdf">Cleaning Services Award pay guide (PDF)</a> (Fair Work Ombudsman, published 24 June 2026; read 17 November 2026)</li>
+  <li><a href="https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/super-guarantee">Super guarantee</a> (ATO, read 17 November 2026)</li>
+  <li><a href="https://www.fairwork.gov.au/leave/annual-leave">Annual leave</a>, <a href="https://www.fairwork.gov.au/leave/sick-and-carers-leave/paid-sick-and-carers-leave">Paid sick and carer's leave</a> and <a href="https://www.fairwork.gov.au/employment-conditions/public-holidays">Public holidays</a> (Fair Work Ombudsman, read 17 November 2026)</li>
+  <li><a href="https://business.gov.au/registrations/register-for-taxes/register-for-goods-and-services-tax-gst">Register for GST</a> and <a href="https://business.gov.au/risk-management/insurance/types-of-business-insurance">Types of business insurance</a> (business.gov.au, read 17 November 2026)</li>
+</ul>
+
+<footer>Published by QuietYieldGroup. <a href="/guides/">More guides and free tools</a></footer>
+</main>
+<script>
+// LOGIC START
+// Port of the Calculator sheet of cleaning-pricing-calculator-FY2026-27.xlsx
+// (products/cleaning-kit/script.py). Same formulas, same order, no rounding
+// of intermediate values (the workbook rounds nothing in this chain).
+var RATES_AS_AT = "the first full pay period starting on or after 1 July 2026 (Fair Work Ombudsman pay guide published 24 June 2026; award consolidated to 1 July 2026)";
+var SOURCES_READ = "17 November 2026";
+// Award Table 2 minimum hourly rates (Min_Hourly)
+var MIN_HOURLY = {1: 27.08, 2: 27.97, 3: 29.45};
+// FWO pay guide pp. 2-4 (Rate_Table): ordinary, early/late, night, Sat, Sun, PH
+var RATE_TABLE = {
+  "Full-time L1": [27.08, 31.14, 35.20, 40.62, 54.16, 67.70],
+  "Full-time L2": [27.97, 32.17, 36.36, 41.96, 55.94, 69.93],
+  "Full-time L3": [29.45, 33.87, 38.29, 44.18, 58.90, 73.63],
+  "Part-time L1": [31.14, 35.20, 35.20, 44.68, 58.22, 71.76],
+  "Part-time L2": [32.17, 36.36, 36.36, 46.15, 60.14, 74.12],
+  "Part-time L3": [33.87, 38.29, 38.29, 48.59, 63.32, 78.04],
+  "Casual L1": [33.85, 37.91, 41.97, 47.39, 60.93, 74.47],
+  "Casual L2": [34.96, 39.16, 43.35, 48.95, 62.93, 76.92],
+  "Casual L3": [36.81, 41.23, 45.65, 51.54, 66.26, 80.99]
+};
+var K = {Super_Pct: 0.12, GST_Rate: 0.10, FT_Hours_Wk: 38, Day_Hours: 7.6,
+         AL_Weeks: 4, AL_Loading: 0.175, PL_Days: 10};
+
+// "12.5" (percent typed by the user) -> 0.125, parsed exactly like the
+// decimal 0.125 typed into a spreadsheet cell.
+function pctFromText(s) {
+  s = String(s == null ? "" : s).trim();
+  if (s === "") return null;
+  if (!/^[0-9]*\.?[0-9]+$|^[0-9]+\.$/.test(s)) return NaN;
+  return Number(s + "e-2");
+}
+function numFromText(s) {
+  s = String(s == null ? "" : s).trim();
+  if (s === "") return null;
+  if (!/^[0-9]*\.?[0-9]+$|^[0-9]+\.$/.test(s)) return NaN;
+  return Number(s);
+}
+
+// raw: strings as typed. Returns {ok:true, inputs} or {ok:false, errors:[...]}
+function readInputs(raw) {
+  var errs = [], i = {};
+  i.Staff_YN = raw.staffYN === "No" ? "No" : "Yes";
+  i.Staff_Level = ({"1": 1, "2": 2, "3": 3})[String(raw.level)] || 1;
+  i.Staff_Type = (["Full-time", "Part-time", "Casual"].indexOf(raw.type) >= 0) ? raw.type : "Casual";
+  i.GST_YN = raw.gst === "No" ? "No" : "Yes";
+  function need(key, label, v, parse, opts) {
+    var x = parse(v);
+    if (x === null) { if (opts && opts.blankOk) return null; errs.push(label + ": please enter a number " + (opts && opts.pos ? "above 0." : "(0 is fine).")); return 0; }
+    if (isNaN(x)) { errs.push(label + ": please enter a number " + (opts && opts.pos ? "above 0" : "of 0 or more") + ", without $ or % signs."); return 0; }
+    if (opts && opts.max != null && x > opts.max) { errs.push(label + ": " + opts.maxMsg); return 0; }
+    if (opts && opts.pos && !(x > 0)) { errs.push(label + ": please enter a number above 0."); return 0; }
+    return x;
+  }
+  var staff = i.Staff_YN === "Yes";
+  var P = pctFromText, N = numFromText;
+  var hund = {max: 1, maxMsg: "can't be more than 100%."};
+  i.Pct_EarlyLate = staff ? need("", "Early/late shift share", raw.pEL, P, hund) : 0;
+  i.Pct_Night = staff ? need("", "Night shift share", raw.pNight, P, hund) : 0;
+  i.Pct_Sat = staff ? need("", "Saturday share", raw.pSat, P, hund) : 0;
+  i.Pct_Sun = staff ? need("", "Sunday share", raw.pSun, P, hund) : 0;
+  i.Pct_PH = staff ? need("", "Public holiday share", raw.pPH, P, hund) : 0;
+  i.WC_Pct = staff ? need("", "Workers' compensation %", raw.wc, P, {max: 1, maxMsg: "that looks too high: enter it as a % of wages, e.g. 2.5."}) : 0;
+  i.PH_Days = staff ? need("", "Public holidays a year", raw.phDays, N, {max: 30, maxMsg: "that looks too high: enter the number of days, e.g. 10."}) : 0;
+  i.Other_Pct = staff ? need("", "Other on-costs %", raw.other, P, {max: 1, maxMsg: "that looks too high: enter it as a % of wages."}) : 0;
+  i.Leave_Override = staff ? need("", "Leave on-cost %", raw.leaveOv, P, {blankOk: true, max: 1, maxMsg: "that looks too high: enter it as a % of wages."}) : null;
+  i.Owner_Pay = need("", "Your target hourly pay", raw.ownerPay, N, staff ? null : {pos: true});
+  i.Owner_Admin_Hrs = need("", "Admin hours a month", raw.adminHrs, N, {max: 744, maxMsg: "that's more hours than a month has."});
+  i.Insurance_Mth = need("", "Insurance a month", raw.ins, N);
+  i.Software_Mth = need("", "Software a month", raw.soft, N);
+  i.OtherFixed_Mth = need("", "Other fixed costs a month", raw.fixed, N);
+  i.Jobs_Mth = need("", "Jobs a month", raw.jobs, N, {pos: true});
+  i.Job_Hours = need("", "Cleaning hours per job", raw.jobHrs, N, {pos: true});
+  i.Margin_Pct = need("", "Profit margin", raw.margin, P, {max: 0.9, maxMsg: "please enter a margin between 0 and 90%."});
+  if (staff && errs.length === 0) {
+    var s = i.Pct_EarlyLate + i.Pct_Night + i.Pct_Sat + i.Pct_Sun + i.Pct_PH;
+    if (1 - s < 0) errs.push("Your shift, weekend and public holiday shares add up to more than 100%. Please fix them.");
+  }
+  return errs.length ? {ok: false, errors: errs} : {ok: true, inputs: i};
+}
+
+// i: same names as the workbook's Inputs sheet (percentages as fractions)
+function calcCleaningCost(i) {
+  var o = {};
+  o.Rate_Key = i.Staff_Type + " L" + i.Staff_Level;
+  var r = RATE_TABLE[o.Rate_Key];
+  o.Rate_Ord = r[0]; o.Rate_EL = r[1]; o.Rate_Night = r[2];
+  o.Rate_Sat = r[3]; o.Rate_Sun = r[4]; o.Rate_PH = r[5];
+  o.Pct_Day = 1 - (i.Pct_EarlyLate + i.Pct_Night + i.Pct_Sat + i.Pct_Sun + i.Pct_PH);
+  o.Blended_Rate = o.Pct_Day * o.Rate_Ord + i.Pct_EarlyLate * o.Rate_EL + i.Pct_Night * o.Rate_Night +
+    i.Pct_Sat * o.Rate_Sat + i.Pct_Sun * o.Rate_Sun + i.Pct_PH * o.Rate_PH;
+  o.Leave_Hours = K.AL_Weeks * K.FT_Hours_Wk + K.PL_Days * K.Day_Hours + i.PH_Days * K.Day_Hours;
+  o.Worked_Hours = 52 * K.FT_Hours_Wk - o.Leave_Hours;
+  o.Leave_Calc = i.Staff_Type === "Casual" ? 0 :
+    (K.AL_Weeks * K.FT_Hours_Wk * (1 + K.AL_Loading) + K.PL_Days * K.Day_Hours + i.PH_Days * K.Day_Hours) / o.Worked_Hours;
+  var ov = (i.Leave_Override === null || i.Leave_Override === undefined || i.Leave_Override === "") ? null : i.Leave_Override;
+  o.Leave_Used = i.Staff_Type === "Casual" ? 0 : (ov === null ? o.Leave_Calc : ov);
+  o.Wage_Hr = o.Blended_Rate * (1 + o.Leave_Used);
+  o.Super_Hr = o.Wage_Hr * K.Super_Pct;
+  o.WC_Hr = o.Wage_Hr * i.WC_Pct;
+  o.Other_Hr = o.Wage_Hr * i.Other_Pct;
+  o.Staff_Cost_Hr = o.Wage_Hr + o.Super_Hr + o.WC_Hr + o.Other_Hr;
+  o.Uplift = o.Staff_Cost_Hr / MIN_HOURLY[i.Staff_Level] - 1;
+  o.Labour_Rate = i.Staff_YN === "Yes" ? o.Staff_Cost_Hr : i.Owner_Pay;
+  o.Fixed_Mth = i.Insurance_Mth + i.Software_Mth + i.OtherFixed_Mth + i.Owner_Admin_Hrs * i.Owner_Pay;
+  o.Ovh_per_Hr = (i.Jobs_Mth * i.Job_Hours > 0) ? o.Fixed_Mth / (i.Jobs_Mth * i.Job_Hours) : 0;
+  o.Charge_Rate = (o.Labour_Rate + o.Ovh_per_Hr) / (1 - i.Margin_Pct);
+  // inc GST: the workbook's own pattern (Quick quote: PriceEx*(1+IF(GST_YN="Yes",GST_Rate,0)))
+  o.Charge_Rate_Inc = o.Charge_Rate * (1 + (i.GST_YN === "Yes" ? K.GST_Rate : 0));
+  // warnings, as the workbook's checks
+  o.Check_WC = i.Staff_YN === "No" ? "n/a" : (i.WC_Pct === 0 ? "warn" : "OK");
+  o.Check_PH = (i.Staff_YN === "No" || i.Staff_Type === "Casual") ? "n/a" :
+    ((i.PH_Days === 0 && ov === null) ? "warn" : "OK");
+  return o;
+}
+
+// money to 2 decimals, half away from zero (as a spreadsheet displays it)
+function money(x) {
+  var neg = x < 0, a = Math.abs(x);
+  var s = (Math.round(Number((a * 100).toPrecision(15))) / 100).toFixed(2);
+  var p = s.split(".");
+  p[0] = p[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return (neg ? "-$" : "$") + p.join(".");
+}
+function pct1(x) {
+  var v = Math.round(Number((x * 100).toPrecision(15)) * 10) / 10;
+  return v.toFixed(1) + "%";
+}
+// LOGIC END
+
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return {"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]; }); }
+  function syncStaff() { $("staffBox").hidden = $("staffYN").value === "No"; }
+  $("staffYN").addEventListener("change", syncStaff);
+  syncStaff();
+
+  function row(label, val, cls) {
+    return "<tr" + (cls ? ' class="' + cls + '"' : "") + "><td>" + label + '</td><td class="num">' + val + "</td></tr>";
+  }
+
+  $("go").addEventListener("click", function () {
+    var ids = ["staffYN", "level", "type", "pEL", "pNight", "pSat", "pSun", "pPH", "wc", "phDays", "other", "leaveOv",
+      "ownerPay", "adminHrs", "ins", "soft", "fixed", "jobs", "jobHrs", "margin", "gst"];
+    var raw = {};
+    ids.forEach(function (k) { raw[k] = $(k).value; });
+    var res = readInputs(raw);
+    var out = $("out");
+    out.hidden = false;
+    if (!res.ok) {
+      out.innerHTML = "<h2>Please check your entries</h2>" +
+        res.errors.map(function (e) { return '<p class="err">' + esc(e) + "</p>"; }).join("");
+      out.scrollIntoView({behavior: "smooth", block: "start"});
+      return;
+    }
+    var i = res.inputs, o = calcCleaningCost(i), staff = i.Staff_YN === "Yes";
+    var h = "<h2>Your result</h2>";
+    if (staff) {
+      h += "<p>Based on what you entered, one hour of cleaning by a " + i.Staff_Type.toLowerCase() + " Level " + i.Staff_Level +
+        " employee costs you about</p><p class=\"big\">" + money(o.Staff_Cost_Hr) + " per hour worked</p>" +
+        "<p>That is " + pct1(o.Uplift) + " more than the bare award minimum hourly rate of " + money(MIN_HOURLY[i.Staff_Level]) + ".</p>";
+    } else {
+      h += "<p>Based on what you entered, your labour cost is your target pay of " + money(i.Owner_Pay) + " an hour.</p>";
+    }
+    h += "<p>To cover that, your overheads and your margin, a suggested price per cleaning hour is</p>" +
+      "<p class=\"big\">" + money(o.Charge_Rate) + " ex GST</p>" +
+      (i.GST_YN === "Yes" ? "<p class=\"big\">" + money(o.Charge_Rate_Inc) + " inc GST</p>" :
+        "<p>You said you're not registered for GST, so no GST is added.</p>");
+
+    h += "<h3>How it adds up</h3><table>";
+    if (staff) {
+      h += row("Award rate: ordinary Mon-Fri day", money(o.Rate_Ord));
+      var pen = [["Early/late shift", i.Pct_EarlyLate, o.Rate_EL], ["Night shift", i.Pct_Night, o.Rate_Night],
+        ["Saturday", i.Pct_Sat, o.Rate_Sat], ["Sunday", i.Pct_Sun, o.Rate_Sun], ["Public holiday", i.Pct_PH, o.Rate_PH]];
+      pen.forEach(function (p) { if (p[1] > 0) h += row("Award rate: " + p[0] + " (" + pct1(p[1]) + " of hours)", money(p[2])); });
+      h += row("Blended award rate per hour worked", money(o.Blended_Rate));
+      h += row("Leave on-cost (" + pct1(o.Leave_Used) + (i.Staff_Type === "Casual" ? ", casual" : "") + ")", money(o.Wage_Hr - o.Blended_Rate));
+      h += row("Wages per hour worked, including leave", money(o.Wage_Hr));
+      h += row("Super guarantee (12%)", money(o.Super_Hr));
+      h += row("Workers' compensation (" + pct1(i.WC_Pct) + ")", money(o.WC_Hr));
+      h += row("Other on-costs (" + pct1(i.Other_Pct) + ")", money(o.Other_Hr));
+      h += row("True cost per staff hour worked", money(o.Staff_Cost_Hr), "tot");
+    } else {
+      h += row("Your labour cost per hour (target pay)", money(o.Labour_Rate), "tot");
+    }
+    h += row("Monthly overheads (incl. " + money(i.Owner_Admin_Hrs * i.Owner_Pay) + " of your admin time)", money(o.Fixed_Mth));
+    h += row("Overhead per cleaning hour (" + esc(String(Number((i.Jobs_Mth * i.Job_Hours).toFixed(2)))) + " hours a month)", money(o.Ovh_per_Hr));
+    h += row("Labour plus overhead per hour", money(o.Labour_Rate + o.Ovh_per_Hr));
+    h += row("Margin (" + pct1(i.Margin_Pct) + " of the price)", money(o.Charge_Rate - (o.Labour_Rate + o.Ovh_per_Hr)));
+    h += row("Price per cleaning hour, ex GST", money(o.Charge_Rate), "tot");
+    if (i.GST_YN === "Yes") {
+      h += row("GST (10%)", money(o.Charge_Rate_Inc - o.Charge_Rate));
+      h += row("Price per cleaning hour, inc GST", money(o.Charge_Rate_Inc), "tot");
+    }
+    h += "</table>";
+
+    if (o.Check_WC === "warn") h += '<p class="note">Workers\' compensation is 0%. Enter your insurer\'s rate: employers must get workers\' compensation insurance from an authorised insurer.</p>';
+    if (o.Check_PH === "warn") h += '<p class="note">Public holidays are 0. Enter the number for your state or territory: public holidays differ between them.</p>';
+    h += '<p class="note">This hourly price covers labour, overheads and margin only. Add travel time, supplies and vehicle costs for each visit. Time spent travelling between workplaces is paid as if working (award cl. 17.12). Part-time and casual staff must be paid the minimum shift even if a job is shorter: for example, 2 hours at a site with a cleaning area up to 2,000 m² (cl. 13.5(c)-(d)).</p>';
+    if (staff) {
+      var notes = [];
+      if (i.Staff_Type === "Casual") notes.push("Casuals: no leave on-cost is added. The award says annual leave does not apply to casual employees (cl. 21.1); they get the 25% casual loading (cl. 11.2) in the rates above.");
+      else {
+        notes.push("Leave is costed from 4 weeks' annual leave with the 17.5% loading, 10 days' personal leave (assumed all taken) and your public holidays" +
+          (i.Leave_Override !== null ? " (you entered your own % instead)" : "") + ".");
+        notes.push("Leave is costed at the blended rate (including any penalties) plus the 17.5% loading. The award pays the greater of the two, not both (cl. 21.3(b)), so for staff who work weekends or shifts this errs on the high side.");
+        if (i.Staff_Type === "Part-time") notes.push("Part-time: the leave on-cost is applied to rates that include the 15% part-time allowance, which the award pays for each ordinary hour worked (cl. 10.2), so this may overstate the cost a little.");
+      }
+      notes.push("Super at 12% is applied to all the wages above, including leave (cautious). See the ATO's guidance on qualifying earnings for what counts.");
+      h += "<p class=\"asat\">" + notes.join(" ") + "</p>";
+    }
+    h += '<p class="asat">Award rates as at ' + RATES_AS_AT + ". Super guarantee 12% for 1 July 2026 to 30 June 2027. Source pages read " + SOURCES_READ + ".</p>";
+    out.innerHTML = h;
+    out.scrollIntoView({behavior: "smooth", block: "start"});
+  });
+})();
+</script>
+</body>
+</html>

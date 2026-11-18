@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qld council quote and tender thresholds: Free check</title><link rel="canonical" href="https://quietyieldgroup.github.io/guides/tools/qld-quote-rule/"><meta property="og:type" content="website"><meta property="og:site_name" content="QuietYieldGroup Guides"><meta property="og:title" content="Qld council quote and tender thresholds: Free check"><meta property="og:description" content="Enter a job value to see which Queensland council buying rule applies: council policy, 3 written quotes or a public tender. Thresholds ex GST."><meta property="og:url" content="https://quietyieldgroup.github.io/guides/tools/qld-quote-rule/"><meta property="og:image" content="https://quietyieldgroup.github.io/guides/qld-tenders-guide/cover.png"><meta property="og:image:width" content="1280"><meta property="og:image:height" content="720"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://quietyieldgroup.github.io/guides/qld-tenders-guide/cover.png">
+<meta name="description" content="Enter a job value to see which Queensland council buying rule applies: council policy, 3 written quotes or a public tender. Thresholds ex GST.">
+<meta name="robots" content="index,follow">
+<style>
+:root{--ink:#1d2530;--muted:#5a6573;--line:#d9dee5;--bg:#f6f7f9;--card:#fff;--accent:#0b5d4b;--accent2:#e7f3ef;--warn:#8a4b00;--warnbg:#fff5e6}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+main{max-width:680px;margin:0 auto;padding:18px 16px 40px}
+h1{font-size:1.55rem;line-height:1.25;margin:.4em 0 .4em}
+h2{font-size:1.2rem;margin:1.6em 0 .5em}
+h3{font-size:1.05rem;margin:1.2em 0 .4em}
+p{margin:.5em 0}
+ul{padding-left:1.2em}
+li{margin:.35em 0}
+a{color:var(--accent)}
+.intro{color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:14px 0}
+label{display:block;font-weight:600;margin:14px 0 6px}
+.hint{display:block;font-weight:400;color:var(--muted);font-size:.92rem;margin-top:2px}
+input[type=number],input[type=date],input[type=text],select{width:100%;font:inherit;padding:12px;border:1px solid #b8c0cb;border-radius:8px;background:#fff;min-height:48px}
+fieldset{border:0;padding:0;margin:14px 0 0}
+legend{font-weight:600;padding:0;margin:0 0 4px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:10px 0;font-weight:400;margin:0}
+.opt input{width:22px;height:22px;margin-top:2px;flex:0 0 auto}
+.err{color:#9b1c1c;font-weight:600;margin-top:12px}
+.err:empty{display:none}
+button{font:inherit;font-weight:600;width:100%;min-height:50px;margin-top:18px;border:0;border-radius:10px;background:var(--accent);color:#fff;cursor:pointer}
+button.secondary{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.result{background:var(--accent2);border:1px solid #b9dccf;border-radius:12px;padding:16px;margin:16px 0}
+.result[hidden]{display:none}
+.result h2{margin-top:0}
+.big{font-size:1.35rem;font-weight:700}
+.note{background:var(--warnbg);border-left:4px solid var(--warn);padding:10px 12px;border-radius:6px;margin:12px 0;font-size:.95rem}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.95rem}
+th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+td.num,th.num{text-align:right;white-space:nowrap}
+.asat{font-size:.88rem;color:var(--muted)}
+.paid{background:var(--card);border:2px solid var(--accent);border-radius:12px;padding:16px;margin:22px 0}
+.paid .price{font-size:1.25rem;font-weight:700}
+.cta{display:block;text-align:center;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:14px;border-radius:10px;margin:12px 0 8px}
+.cta2{display:block;text-align:center;color:var(--accent);font-weight:600;padding:10px}
+.offer{font-weight:600}
+.disclaimer{font-size:.92rem;color:var(--muted);border-top:1px solid var(--line);margin-top:26px;padding-top:12px}
+.sources{font-size:.9rem;overflow-wrap:anywhere}
+.sources li{margin:6px 0}
+footer{font-size:.85rem;color:var(--muted);margin-top:20px}
+@media (min-width:700px){body{font-size:17px}h1{font-size:1.9rem}}
+</style>
+</head>
+<body>
+<main>
+<h1>Queensland council quote and tender thresholds: Free check</h1>
+<p class="intro">For small Queensland businesses who want council work. Enter the value of a job and see which buying rule the council works under: its own policy, written quotes from at least 3 suppliers, or a public tender. Then see how you get asked.</p>
+
+<form class="card" id="f" onsubmit="return false" novalidate>
+  <label for="amt">Job or contract value (A$)
+    <span class="hint">What the contract is expected to cost over its whole term, including any extensions agreed at the start, for example 150000 or 150,000.</span>
+  </label>
+  <input type="text" id="amt" inputmode="decimal" autocomplete="off" placeholder="e.g. 150000">
+
+  <fieldset>
+    <legend>Does that amount include GST?</legend>
+    <label class="opt"><input type="radio" name="gst" value="ex" checked> No, it is the price excluding GST (or no GST is charged)</label>
+    <label class="opt"><input type="radio" name="gst" value="inc"> Yes, it includes GST</label>
+  </fieldset>
+
+  <div id="gstbox" hidden>
+    <label for="gstamt">GST included in that amount (A$)
+      <span class="hint">Copy the GST figure from the quote or estimate. Council thresholds are compared with the price excluding GST.</span>
+    </label>
+    <input type="text" id="gstamt" inputmode="decimal" autocomplete="off" placeholder="e.g. 13636.36">
+  </div>
+
+  <label for="council">Which council?
+    <span class="hint">Most councils use the default rules in the Local Government Regulation 2012. A few publish their own bands.</span>
+  </label>
+  <select id="council">
+    <option value="default">Another council, or I'm not sure</option>
+    <option value="logan">Logan City Council</option>
+    <option value="moretonbay">City of Moreton Bay</option>
+    <option value="brisbane">Brisbane City Council</option>
+  </select>
+
+  <label for="period">When is the contract being entered into?
+    <span class="hint">The thresholds are indexed each 1 July.</span>
+  </label>
+  <select id="period">
+    <option value="current">On or after 1 July 2026</option>
+    <option value="prior">12 December 2025 to 30 June 2026</option>
+  </select>
+
+  <p class="err" id="err" role="alert"></p>
+  <button type="button" id="go">Check</button>
+</form>
+
+<section class="result" id="out" hidden aria-live="polite"></section>
+
+<section class="paid">
+  <h2>Want the full guide to getting council and government work?</h2>
+  <p>The guide <em>Winning Council and Government Work in Queensland</em> (2026 edition) shows where Queensland state, council, Main Roads, Health and university work is listed, and how to set up the main free official alerts. It explains council buying at each contract size, including councils that invite local firms first for jobs up to $500,000. It covers how to get onto Local Buy, council and QBuild panels and PQC: how to join, what it costs, when tenders open. It also has a one-page documents checklist, a fill-in capability statement, a bid/no-bid scoring sheet and bid log, and a first-30-days plan.</p>
+  <p class="price">A$24</p>
+  <a class="cta" href="/guides/qld-tenders-guide/">See the Queensland tenders guide (A$24)</a>
+  <a class="cta2" href="/guides/qld-tenders-guide/free-preview.pdf">Read the free preview (PDF)</a>
+  <p class="offer">Launch offer: 25% off with code LAUNCH25 until 30 November 2026.</p>
+</section>
+
+<p class="disclaimer">General information, not advice; check with your council. Councils can change their procurement policies, and the thresholds are indexed each 1 July. This tool runs only in your browser: nothing you enter is saved or sent anywhere. Not produced or endorsed by any government agency, council, Local Buy or VendorPanel.</p>
+
+<h2>Sources</h2>
+<ul class="sources">
+  <li><a href="https://www.legislation.qld.gov.au/view/whole/html/inforce/current/sl-2012-0236">Local Government Regulation 2012</a> (Queensland legislation; ss217, 223, 223A, 223B, 223C, 223E, 225, 228, 231–234; read 17 November 2026)</li>
+  <li><a href="https://www.dlgwv.qld.gov.au/local-government/for-councils/governance/empowering-councils-reg">Local Government Legislation (Empowering Councils) Amendment Regulation 2025</a> (Department of Local Government; read 17 November 2026)</li>
+  <li>Quilpie Shire Council procurement policy, effective 1 July 2026 (gives $21,900 and $292,000; read 17 November 2026)</li>
+  <li>Logan City Council procurement page (read 17 November 2026)</li>
+  <li><a href="https://www.moretonbay.qld.gov.au/Services/Business-Investment/Doing-Business-With-Council/Supplying-Goods-And-Services">City of Moreton Bay: supplying goods and services</a> (read 17 November 2026)</li>
+  <li><a href="https://www.brisbane.qld.gov.au/business/council-tenders-and-market-led-proposals/tender-process">Brisbane City Council: tender process and supplier registration</a> (read 17 November 2026)</li>
+  <li><a href="https://supply.qld.gov.au/">Supply Queensland (VendorPanel supplier profile)</a> (Queensland Government; read 17 November 2026)</li>
+  <li><a href="https://www.localbuy.net.au/Suppliers/Become-a-Local-Buy-Supplier">Local Buy: become a Local Buy supplier</a> and <a href="https://www.localbuy.net.au/Suppliers/Fees">Local Buy: fees</a> (read 17 November 2026)</li>
+  <li>Southern Downs, Noosa and Gold Coast council supplier pages (read 17 November 2026)</li>
+</ul>
+
+<footer>Published by QuietYieldGroup. <a href="/guides/">More guides and free tools</a></footer>
+</main>
+<script>
+// LOGIC START
+var QRULE = (function () {
+  // All dollar figures held in cents. Council thresholds are ex GST.
+  var PERIODS = {
+    current: {
+      medium: 2190000, large: 29200000,
+      mediumText: "$21,900", largeText: "$292,000",
+      from: [2026, 6, 1],
+      basis: "Quilpie Shire Council's procurement policy effective 1 July 2026, after the 1 July 2026 indexation. The department's own indexed figures were not found, so check your council's procurement policy."
+    },
+    prior: {
+      medium: 2100000, large: 28000000,
+      mediumText: "$21,000", largeText: "$280,000",
+      from: [2025, 11, 12],
+      basis: "The Local Government Legislation (Empowering Councils) Amendment Regulation 2025, in force 12 December 2025, for arrangements entered into before 1 July 2026."
+    }
+  };
+  var DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+  function formatDate(y, m, d) {
+    var dt = new Date(y, m, d);
+    return DAYS[dt.getDay()] + " " + dt.getDate() + " " + MONTHS[dt.getMonth()] + " " + dt.getFullYear();
+  }
+
+  // Parse "$150,000.50" etc. Returns {ok, cents} or {ok:false, error}
+  function parseMoney(raw, label) {
+    var s = (raw === undefined || raw === null) ? "" : String(raw).trim();
+    if (s === "") return { ok: false, error: "Please enter the " + label + "." };
+    s = s.replace(/^A\$/i, "").replace(/\$/g, "").replace(/,/g, "").replace(/\s+/g, "");
+    if (/^-/.test(s)) return { ok: false, error: "The " + label + " can't be negative." };
+    if (!/^\d+(\.\d{0,2})?$|^\.\d{1,2}$/.test(s)) {
+      return { ok: false, error: "The " + label + " doesn't look like a dollar amount. Use numbers only, for example 150000 or 150,000.50." };
+    }
+    var cents = Math.round(parseFloat(s) * 100);
+    if (!isFinite(cents)) return { ok: false, error: "The " + label + " doesn't look like a dollar amount." };
+    if (cents > 100000000000) return { ok: false, error: "That " + label + " is too large for this check." };
+    return { ok: true, cents: cents };
+  }
+
+  function money(cents) {
+    var neg = cents < 0; if (neg) cents = -cents;
+    var dollars = Math.floor(cents / 100), c = cents % 100;
+    var s = String(dollars).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return (neg ? "-" : "") + "$" + s + (c ? "." + (c < 10 ? "0" : "") + c : "");
+  }
+
+  // Default Local Government Regulation 2012 bands
+  function classifyDefault(exCents, period) {
+    var p = PERIODS[period];
+    if (!p) return null;
+    if (exCents >= p.large) return "large";
+    if (exCents >= p.medium) return "medium";
+    return "under";
+  }
+
+  // Logan (council's own bands, ex GST): $0-$50,000 one quote local first;
+  // $50,000-$500,000 min 3 quotes local first via VendorPanel; more than $500,000 tenders.
+  function classifyLogan(exCents) {
+    if (exCents > 50000000) return { band: "tender", boundary: false };
+    if (exCents > 5000000) return { band: "three", boundary: false };
+    if (exCents === 5000000) return { band: "one", boundary: true };
+    return { band: "one", boundary: false };
+  }
+
+  // Moreton Bay (council's own bands, ex GST): <$25,000 one; $25,000-$250,000 two;
+  // $250,000-$500,000 three; $500,000 or more tenders.
+  function classifyMoretonBay(exCents) {
+    if (exCents === 25000000) return { band: "two", boundary: true };
+    if (exCents === 50000000) return { band: "tender", boundary: true };
+    if (exCents >= 50000000) return { band: "tender", boundary: false };
+    if (exCents > 25000000) return { band: "three", boundary: false };
+    if (exCents >= 2500000) return { band: "two", boundary: false };
+    return { band: "one", boundary: false };
+  }
+
+  // input: {amount, gstBasis:"ex"|"inc", gstAmount, council, period}
+  function check(input) {
+    var a = parseMoney(input.amount, "job value");
+    if (!a.ok) return { ok: false, error: a.error };
+    if (a.cents === 0) return { ok: false, error: "Please enter a job value above $0." };
+    var ex = a.cents, gst = 0;
+    if (input.gstBasis === "inc") {
+      var g = parseMoney(input.gstAmount, "GST amount");
+      if (!g.ok) return { ok: false, error: g.error + " (Or choose \"excluding GST\" and enter the price without GST.)" };
+      if (g.cents >= a.cents) return { ok: false, error: "The GST amount must be less than the GST-inclusive total." };
+      gst = g.cents;
+      ex = a.cents - g.cents;
+    } else if (input.gstBasis !== "ex") {
+      return { ok: false, error: "Please say whether the amount includes GST." };
+    }
+    var period = PERIODS[input.period] ? input.period : null;
+    if (!period) return { ok: false, error: "Please choose when the contract is being entered into." };
+    var council = input.council || "default";
+    var p = PERIODS[period];
+    var res = {
+      ok: true, exCents: ex, gstCents: gst, enteredCents: a.cents, council: council, period: period,
+      exText: money(ex), mediumText: p.mediumText, largeText: p.largeText,
+      fromDate: formatDate(p.from[0], p.from[1], p.from[2]), basis: p.basis,
+      readDate: formatDate(2026, 10, 17)
+    };
+    res.defaultRule = classifyDefault(ex, period);
+    if (council === "logan") res.councilBand = classifyLogan(ex);
+    else if (council === "moretonbay") res.councilBand = classifyMoretonBay(ex);
+    else if (council === "brisbane") res.councilBand = { band: "own-legislation", boundary: false };
+    else res.councilBand = null;
+    return res;
+  }
+
+  return { PERIODS: PERIODS, parseMoney: parseMoney, money: money, formatDate: formatDate,
+    classifyDefault: classifyDefault, classifyLogan: classifyLogan, classifyMoretonBay: classifyMoretonBay, check: check };
+})();
+// LOGIC END
+
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function gstBasis() { var r = document.querySelector('input[name="gst"]:checked'); return r ? r.value : ""; }
+  function syncGst() { $("gstbox").hidden = gstBasis() !== "inc"; }
+  var radios = document.querySelectorAll('input[name="gst"]');
+  for (var i = 0; i < radios.length; i++) radios[i].addEventListener("change", syncGst);
+  syncGst();
+
+  var GET_ON_VENDORPANEL = '<li><strong>VendorPanel Marketplace.</strong> Create a free supplier profile through <a href="https://supply.qld.gov.au/">supply.qld.gov.au</a>. Supply Queensland says to "register into all supply categories (Marketplace Lists) that match your business capability", then request an invitation and set your regions of service and notification settings. Southern Downs council, for example, says its Marketplace "is used by Council to select a minimum of 3 suppliers in the relevant category to invite to quote".</li>';
+  var GET_ON_LOCALBUY = '<li><strong>Local Buy arrangements.</strong> Local Buy is owned by the LGAQ and its website says 71 Queensland councils use its platform. To join, you respond to its tenders, which open "on 1st February, 1st May, 1st August and 1st November each year" and are "generally" open for the entire month (on its APET360 portal; the process takes three months). So the round that opened 1 November 2026 may still be open in late November: check Local Buy\'s Open Tenders page. If the pattern holds, the next opens 1 February 2027. Fees: "Initial Appointment: $500 (ex GST)" and "Annual Renewal: $250 (ex GST)" (the Supplier Verification Fee, waived for some small businesses with proof of eligibility), plus a Contract Management Fee of 0.75% to 2% that varies per arrangement. Minimum $20M public liability insurance.</li>';
+  var GET_ON_COUNCILLISTS = '<li><strong>Council panels and pre-qualified lists.</strong> Each council runs its own. Southern Downs, for example, says suppliers "must go through the official tender process" to get on its lists, which "can be refreshed approximately once a year", and that acceptance "does not guarantee any amount of business". Check your council\'s procurement policy and supplier page.</li>';
+  var EXCEPTIONS = '<p>For medium and large contracts, the Regulation lets a council skip quotes and tenders when it buys from an approved contractor list (for services), a register of pre-qualified suppliers, a preferred supplier arrangement or an LGA arrangement (such as Local Buy). If you are not on those lists, you can\'t be asked through them.</p>';
+
+  function defaultBlock(r, lead) {
+    var h = "";
+    if (r.defaultRule === "under") {
+      h += '<p class="big">' + lead + 'Under ' + r.mediumText + ' (ex GST): the council\'s own procurement policy applies</p>';
+      h += '<p>The Regulation\'s default rules set no three-quote rule below ' + r.mediumText + '. How many quotes the council gets, and from whom, is up to its own procurement policy. Check your council\'s procurement policy.</p>';
+      h += '<p><strong>Getting invited:</strong> the council\'s buyers choose who to ask, so be registered where they look and make sure they know you.</p>';
+    } else if (r.defaultRule === "medium") {
+      h += '<p class="big">' + lead + 'Medium-sized contract (' + r.mediumText + ' to under ' + r.largeText + ', ex GST): written quotes from at least 3 suppliers</p>';
+      h += '<p>Under the default rules, the council must invite written quotes from at least 3 suppliers "who the local government considers can meet the local government\'s requirements at competitive prices."</p>';
+      h += '<p><strong>Getting invited:</strong> the council chooses who to ask, and quote requests usually aren\'t published. Many councils pick from VendorPanel Marketplace categories. Noosa says registering there means "the supplier is raising Council buyers\' awareness of that supplier when they are seeking quotations." Gold Coast says quotes "are generally requested through a closed market process".</p>';
+    } else {
+      h += '<p class="big">' + lead + 'Large-sized contract (' + r.largeText + ' and above, ex GST): written tenders</p>';
+      h += '<p>Under the default rules, the council must invite written tenders, published on its website for at least 21 days.</p>';
+      h += '<p><strong>Getting invited:</strong> the invitation is published on the council\'s website, so anyone can respond. (If the council decides by resolution, it can instead first invite expressions of interest, also published on its website, then ask only a shortlist to tender.) Set up free VendorPanel alerts: you then get notified of public tenders for the supply categories and regions you chose.</p>';
+    }
+    return h;
+  }
+
+  function render(r) {
+    var h = '<h2>Your result</h2>';
+    h += '<p>Based on what you entered, the contract value excluding GST is <strong>' + esc(r.exText) + '</strong>';
+    if (r.gstCents) h += ' (' + esc(QRULE.money(r.enteredCents)) + ' including GST, less ' + esc(QRULE.money(r.gstCents)) + ' GST)';
+    h += '.</p>';
+
+    if (r.council === "brisbane") {
+      h += '<p class="big">Brisbane City Council: its own legislation applies</p>';
+      h += '<p>Brisbane City Council works under the City of Brisbane Act 2010 and the City of Brisbane Regulation 2012, not the Local Government Regulation 2012. Its thresholds were not checked for this tool, so none are shown. Check Brisbane\'s <a href="https://www.brisbane.qld.gov.au/business/council-tenders-and-market-led-proposals/tender-process">tender pages</a>.</p>';
+      h += '<p><strong>Getting invited:</strong> Brisbane publishes all its public tenders in its own supplier portal, SAP Ariba, and on its current tenders page (not VendorPanel). Registration has 2 steps: a Supplier Self-Registration Request form, then a Supplier Registration Questionnaire. Allow 2 business days for approval. There are no fees with a standard SAP Business Network account, and tender alerts are based on the UNSPSC category code you choose.</p>';
+    } else if (r.council === "logan") {
+      var b = r.councilBand;
+      h += '<p>Logan City Council applies the Regulation\'s "strategic contracting procedures" and publishes its own bands (ex GST).</p>';
+      if (b.band === "one") h += '<p class="big">Logan, $0 to $50,000: a quotation from a local business in the first instance</p>';
+      else if (b.band === "three") h += '<p class="big">Logan, $50,000 to $500,000: at least 3 quotes, local businesses first, through VendorPanel</p><p>In the council\'s words: "Council will source a minimum of 3 quotations only from local business in the first instance. Quotations must be invited through VendorPanel."</p>';
+      else h += '<p class="big">Logan, more than $500,000: tenders</p><p>In the council\'s words: "When we expect to spend more than $500,000 (excluding GST) in one contract, we must invite tenders".</p>';
+      if (b.boundary) h += '<div class="note">Exactly $50,000 is written in two of Logan\'s bands ("$0 to $50,000" and "$50,000 to $500,000"). Ask the council which applies.</div>';
+      h += '<p><strong>Getting invited:</strong> quotes go to local businesses first, and from $50,000 they must be invited through VendorPanel. If you are not registered on VendorPanel, buyers can\'t find you there.</p>';
+    } else if (r.council === "moretonbay") {
+      var m = r.councilBand;
+      h += '<p>Moreton Bay says it "applies the strategic contracting procedures outlined in the Local Government Regulation 2012" and publishes its own bands (ex GST).</p>';
+      if (m.band === "one") h += '<p class="big">Moreton Bay, less than $25,000: one written quote (minimum), local business first</p><p>In the council\'s words: "Council will obtain one written quote (minimum) from a local business in the first instance (where suitable)."</p>';
+      else if (m.band === "two") h += '<p class="big">Moreton Bay, $25,000 to $250,000: two written quotes (minimum), local businesses first</p><p>In the council\'s words: "Council will invite two written quotes (minimum) from local businesses in the first instance (where suitable)."</p>';
+      else if (m.band === "three") h += '<p class="big">Moreton Bay, $250,000 to $500,000: three written quotes (minimum), local businesses first</p><p>In the council\'s words: "Council will invite three written quotes (minimum) from local businesses in the first instance (where suitable)."</p>';
+      else h += '<p class="big">Moreton Bay, $500,000 or more: tenders</p><p>"Council will invite tenders in accordance with the contracting plan." It "may include a local business and local benefit non-price evaluation weighting of 15 percent."</p>';
+      if (m.boundary) h += '<div class="note">Exactly ' + esc(QRULE.money(r.exCents)) + ' is written in two of Moreton Bay\'s bands. Ask the council which applies.</div>';
+      h += '<p><strong>Getting invited:</strong> Moreton Bay may also buy "under an existing Council supplier panel arrangement, Local Buy arrangement, or other government agency arrangement". It publishes a contracting plan of planned significant procurement for the financial year, hosts supplier briefing sessions, and takes contract and tender enquiries at procurement@moretonbay.qld.gov.au.</p>';
+    } else {
+      h += defaultBlock(r, "");
+      h += EXCEPTIONS;
+      h += '<div class="note">These are the Regulation\'s default rules. A council can decide to apply its "strategic contracting procedures" instead and set its own bands: Logan and Moreton Bay do, with local businesses asked first up to $500,000. Brisbane has its own legislation. Check your council\'s procurement policy.</div>';
+    }
+
+    if (r.council !== "brisbane") {
+      h += '<h3>How to get on the lists councils use</h3><ul>' + GET_ON_VENDORPANEL + GET_ON_LOCALBUY + GET_ON_COUNCILLISTS + '</ul>';
+    }
+
+    if (r.council === "default") {
+      h += '<p class="asat">Thresholds as at ' + esc(r.fromDate) + ': ' + esc(r.mediumText) + ' and ' + esc(r.largeText) + ', excluding GST. Source: ' + esc(r.basis) + ' Thresholds are indexed each 1 July. Some council pages still show $15,000 and $200,000, which are the figures from before December 2025. Source pages read ' + esc(r.readDate) + '.</p>';
+    } else {
+      h += '<p class="asat">Council bands and procedures as shown on the council\'s own page, read ' + esc(r.readDate) + '. Councils can change their policies: check the current one.</p>';
+    }
+    $("out").innerHTML = h;
+    $("out").hidden = false;
+    $("out").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  $("go").addEventListener("click", function () {
+    var r = QRULE.check({
+      amount: $("amt").value, gstBasis: gstBasis(), gstAmount: $("gstamt").value,
+      council: $("council").value, period: $("period").value
+    });
+    if (!r.ok) { $("err").textContent = r.error; $("out").hidden = true; return; }
+    $("err").textContent = "";
+    render(r);
+  });
+})();
+</script>
+</body>
+</html>

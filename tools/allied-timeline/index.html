@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Allied health practice registration timeline: Free tool</title><link rel="canonical" href="https://quietyieldgroup.github.io/guides/tools/allied-timeline/"><meta property="og:type" content="website"><meta property="og:site_name" content="QuietYieldGroup Guides"><meta property="og:title" content="Allied health practice registration timeline: Free tool"><meta property="og:description" content="Enter your opening date to see the order of registrations for a new allied health practice and the latest date to apply, from official processing times."><meta property="og:url" content="https://quietyieldgroup.github.io/guides/tools/allied-timeline/"><meta property="og:image" content="https://quietyieldgroup.github.io/guides/allied-health-setup/cover.png"><meta property="og:image:width" content="1280"><meta property="og:image:height" content="720"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://quietyieldgroup.github.io/guides/allied-health-setup/cover.png">
+<meta name="description" content="Enter your opening date to see the order of registrations for a new allied health practice and the latest date to apply, from official processing times.">
+<meta name="robots" content="index,follow">
+<style>
+:root{--ink:#1d2530;--muted:#5a6573;--line:#d9dee5;--bg:#f6f7f9;--card:#fff;--accent:#0b5d4b;--accent2:#e7f3ef;--warn:#8a4b00;--warnbg:#fff5e6}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+main{max-width:680px;margin:0 auto;padding:18px 16px 40px}
+h1{font-size:1.55rem;line-height:1.25;margin:.4em 0 .4em}
+h2{font-size:1.2rem;margin:1.6em 0 .5em}
+h3{font-size:1.05rem;margin:1.2em 0 .4em}
+p{margin:.5em 0}
+a{color:var(--accent)}
+.intro{color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:14px 0}
+label{display:block;font-weight:600;margin:14px 0 6px}
+.hint{display:block;font-weight:400;color:var(--muted);font-size:.92rem;margin-top:2px}
+input[type=number],input[type=date],input[type=text],select{width:100%;font:inherit;padding:12px;border:1px solid #b8c0cb;border-radius:8px;background:#fff;min-height:48px}
+fieldset{border:0;padding:0;margin:14px 0 0}
+legend{font-weight:600;padding:0;margin-bottom:4px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:10px 0;font-weight:400;margin:0}
+.opt input{width:22px;height:22px;margin-top:2px;flex:0 0 auto}
+button{font:inherit;font-weight:600;width:100%;min-height:50px;margin-top:18px;border:0;border-radius:10px;background:var(--accent);color:#fff;cursor:pointer}
+button.secondary{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.result{background:var(--accent2);border:1px solid #b9dccf;border-radius:12px;padding:16px;margin:16px 0}
+.result[hidden]{display:none}
+.result h2{margin-top:0}
+.big{font-size:1.35rem;font-weight:700}
+.note{background:var(--warnbg);border-left:4px solid var(--warn);padding:10px 12px;border-radius:6px;margin:12px 0;font-size:.95rem}
+.err{background:var(--warnbg);border-left:4px solid var(--warn);padding:10px 12px;border-radius:6px;margin:12px 0}
+.step{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:12px 0}
+.step h3{margin:0 0 6px;font-size:1.05rem}
+.step .n{display:inline-block;min-width:1.7em;height:1.7em;line-height:1.7em;text-align:center;border-radius:50%;background:var(--accent);color:#fff;font-size:.9rem;margin-right:6px}
+.step .when{font-weight:700}
+.step ul{margin:.4em 0;padding-left:1.2em}
+.step li{margin:.25em 0}
+.flag{color:var(--warn);font-weight:600}
+.asat{font-size:.88rem;color:var(--muted)}
+.paid{background:var(--card);border:2px solid var(--accent);border-radius:12px;padding:16px;margin:22px 0}
+.paid ul{padding-left:1.2em}
+.paid .price{font-size:1.25rem;font-weight:700}
+.cta{display:block;text-align:center;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:14px;border-radius:10px;margin:12px 0 8px}
+.cta2{display:block;text-align:center;color:var(--accent);font-weight:600;padding:10px}
+.offer{font-weight:600}
+.disclaimer{font-size:.92rem;color:var(--muted);border-top:1px solid var(--line);margin-top:26px;padding-top:12px}
+.sources{font-size:.9rem;overflow-wrap:anywhere}
+.sources li{margin:6px 0}
+footer{font-size:.85rem;color:var(--muted);margin-top:20px}
+@media (min-width:700px){body{font-size:17px}h1{font-size:1.9rem}}
+</style>
+</head>
+<body>
+<main>
+<h1>Allied health practice registration timeline: Free tool</h1>
+<p class="intro">Opening your own allied health practice in Australia? Enter your planned start date. You'll see the order to do your registrations in, and the latest date to apply for each one, counted back from the official processing times.</p>
+
+<form class="card" id="f" onsubmit="return false" novalidate>
+  <label for="start">Planned first day seeing patients
+    <span class="hint">At this location. Use the date picker, or type the date as DD/MM/YYYY.</span></label>
+  <input type="date" id="start" name="start">
+
+  <label for="prof">Your profession</label>
+  <select id="prof" name="prof">
+    <option value="">Choose your profession</option>
+    <option value="physio">Physiotherapy</option>
+    <option value="psych">Psychology</option>
+    <option value="ot">Occupational therapy</option>
+    <option value="podiatry">Podiatry</option>
+    <option value="chiro">Chiropractic</option>
+    <option value="osteo">Osteopathy</option>
+    <option value="speech">Speech pathology</option>
+    <option value="diet">Dietetics</option>
+  </select>
+
+  <fieldset>
+    <legend>Who will you bill?</legend>
+    <label class="opt"><input type="checkbox" id="medicare" checked> Medicare (patients get a Medicare benefit)</label>
+    <label class="opt"><input type="checkbox" id="dva" checked> DVA (veterans)</label>
+    <label class="opt"><input type="checkbox" id="funds" checked> Private health fund members</label>
+    <label class="opt"><input type="checkbox" id="hicaps" checked> On-the-spot fund claims through HICAPS</label>
+    <label class="opt"><input type="checkbox" id="ndis"> NDIS participants</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>About your business</legend>
+    <label class="opt"><input type="checkbox" id="hasAbn"> I already have an ABN for this business</label>
+    <label class="opt"><input type="checkbox" id="bizName"> I'll trade under a business name, not my own name</label>
+    <label class="opt"><input type="checkbox" id="gst"> I expect GST turnover of $75,000 or more in my first year</label>
+    <label class="opt"><input type="checkbox" id="hasProda"> I already have an individual PRODA account</label>
+    <label class="opt"><input type="checkbox" id="additional"> I already have a Medicare provider number at another location (this is an extra location)</label>
+    <label class="opt"><input type="checkbox" id="staff"> A practice manager or staff member will use HPOS for me</label>
+  </fieldset>
+
+  <button type="button" id="go">Show my timeline</button>
+</form>
+
+<section class="result" id="out" hidden aria-live="polite"></section>
+
+<section class="paid">
+  <h2>Want every step in detail?</h2>
+  <p><b>Get Paid From Day One: Allied Health Practice Setup Checklist (2026 edition)</b> takes you through the whole chain, step by step. It adds:</p>
+  <ul>
+    <li>A one-page master checklist with tick boxes, to print</li>
+    <li>A timeline from eight weeks before opening to day one</li>
+    <li>Step-by-step PRODA, HPOS and Medicare provider number instructions, and three address traps that hold up applications</li>
+    <li>DVA: what's automatic, and the GST paperwork that isn't</li>
+    <li>Fund-by-fund notes, plus HICAPS, workers' compensation, TAC and NDIS</li>
+    <li>Ahpra advertising rules and privacy policy duties for day one</li>
+    <li>Buying, moving or adding a location, setting up an HPOS delegate, and a renewals calendar</li>
+  </ul>
+  <p class="price">A$29</p>
+  <a class="cta" href="/guides/allied-health-setup/">See the setup checklist (A$29)</a>
+  <a class="cta2" href="/guides/allied-health-setup/free-preview.pdf">Read the free preview (PDF)</a>
+  <p class="offer">Launch offer: 25% off with code LAUNCH25 until 30 November 2026.</p>
+</section>
+
+<p class="disclaimer">General information, not advice; check with Ahpra (or your professional body), Services Australia, the ATO and your health funds. Processing times change. This tool runs only in your browser: nothing you enter is saved or sent anywhere. Not produced or endorsed by any government agency, health fund or HICAPS.</p>
+
+<h2>Sources</h2>
+<ul class="sources">
+  <li><a href="https://www.servicesaustralia.gov.au/apply-for-initial-provider-and-prescriber-numbers">Apply for initial provider and prescriber numbers</a> (Services Australia, read 17 November 2026)</li>
+  <li><a href="https://www.servicesaustralia.gov.au/eligibility-for-health-professionals">Eligibility for health professionals</a> (Services Australia, read 17 November 2026)</li>
+  <li><a href="https://www.servicesaustralia.gov.au/apply-for-additional-provider-numbers">Apply for additional provider numbers</a> (Services Australia, read 17 November 2026)</li>
+  <li><a href="https://www.servicesaustralia.gov.au/how-to-register-for-individual-proda-account">How to register for an individual PRODA account</a> (Services Australia, read 17 November 2026)</li>
+  <li><a href="https://www.servicesaustralia.gov.au/hpos">Health Professional Online Services (HPOS)</a> (Services Australia, read 17 November 2026)</li>
+  <li><a href="https://www.servicesaustralia.gov.au/manage-delegations-hpos">Manage delegations in HPOS</a> (Services Australia, read 17 November 2026)</li>
+  <li><a href="https://www.ahpra.gov.au/Registration/Renewal.aspx">Registration renewal</a> (Ahpra, read 17 November 2026)</li>
+  <li><a href="https://www.ahpra.gov.au/National-Boards.aspx">National Boards</a> (Ahpra, read 17 November 2026)</li>
+  <li><a href="https://www.abr.gov.au/business-super-funds-charities/applying-abn">Applying for an ABN</a> (Australian Business Register, read 17 November 2026)</li>
+  <li><a href="https://asic.gov.au/for-business-and-companies/business-names/register-a-business-name/">Register a business name</a> (ASIC, read 17 November 2026)</li>
+  <li><a href="https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/registering-for-gst">Registering for GST</a> (ATO, read 17 November 2026)</li>
+  <li><a href="https://www.dva.gov.au/providers/become-a-dva-health-care-provider">Become a DVA health care provider</a> (DVA, read 17 November 2026)</li>
+  <li><a href="https://www.medibank.com.au/providers/ancillary/register/recognition-criteria-medicare/">Recognition criteria: Medicare</a> (Medibank, read 17 November 2026)</li>
+  <li><a href="https://www.nib.com.au/providers/ancillary/allied-health">Allied health providers</a> (nib, read 17 November 2026)</li>
+  <li><a href="https://www.gmhba.com.au/contact-us/provider-registration/ancillary">Ancillary provider registration</a> (GMHBA, read 17 November 2026)</li>
+  <li><a href="https://www.bupa.com.au/for-providers/ancillary/medicare-registered">Medicare-registered providers</a> and <a href="https://www.bupa.com.au/for-providers/ancillary/ancillary-provider-common-questions">common questions</a> (Bupa, read 17 November 2026)</li>
+  <li><a href="https://www.hcf.com.au/provider-portals/ancillary/">Ancillary providers</a> (HCF, read 17 November 2026)</li>
+  <li><a href="https://www.hbf.com.au/about-hbf/for-providers/ancillary">Ancillary providers</a> (HBF, read 17 November 2026)</li>
+  <li><a href="https://www.hicaps.com.au/news/Add-Provider">Add a provider</a> (HICAPS, read 17 November 2026)</li>
+  <li><a href="https://www.ndiscommission.gov.au/provider-registration/about-registration">About registration</a> (NDIS Quality and Safeguards Commission, read 17 November 2026)</li>
+</ul>
+
+<footer>Published by QuietYieldGroup. <a href="/guides/">More guides and free tools</a></footer>
+</main>
+<script>
+// LOGIC START
+// Pure functions, no DOM. Every lead time below comes from the product's sources.md (line numbers in comments).
+var ASAT = "17 November 2026"; // sources.md:L3, L8 (pages read 17 Nov 2026)
+var MEDICARE_DAYS = 28;        // sources.md:L64 "up to 28 days to process from the date we get your application"
+var SURGE_EXTRA_DAYS = 14;     // sources.md:L75 (ours: "start two weeks earlier" in Dec-Apr), built on L66
+var ABN_REVIEW_BUSINESS_DAYS = 20; // sources.md:L97 "review your application within 20 business days"
+var ABN_LETTER_DAYS = 14;      // sources.md:L98 "send you a letter within 14 days"
+var DAY_NAMES = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+var MONTH_NAMES = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+var PROFS = {
+  physio:   {name:"physiotherapy", ahpra:true},
+  psych:    {name:"psychology", ahpra:true},
+  ot:       {name:"occupational therapy", ahpra:true},
+  podiatry: {name:"podiatry", ahpra:true},
+  chiro:    {name:"chiropractic", ahpra:true},
+  osteo:    {name:"osteopathy", ahpra:true},
+  speech:   {name:"speech pathology", ahpra:false},
+  diet:     {name:"dietetics", ahpra:false}
+};
+
+function parseYMD(s) {
+  if (typeof s !== "string") return null;
+  var y, mo, d;
+  var m = /^\s*(\d{4})-(\d{1,2})-(\d{1,2})\s*$/.exec(s);
+  if (m) { y = +m[1]; mo = +m[2] - 1; d = +m[3]; }
+  else {
+    m = /^\s*(\d{1,2})\/(\d{1,2})\/(\d{4})\s*$/.exec(s); // typed Australian style, DD/MM/YYYY
+    if (!m) return null;
+    d = +m[1]; mo = +m[2] - 1; y = +m[3];
+  }
+  var dt = new Date(y, mo, d);
+  if (dt.getFullYear() !== y || dt.getMonth() !== mo || dt.getDate() !== d) return null;
+  return dt;
+}
+function dayOnly(dt) { return new Date(dt.getFullYear(), dt.getMonth(), dt.getDate()); }
+function addDays(dt, n) { return new Date(dt.getFullYear(), dt.getMonth(), dt.getDate() + n); }
+function isWeekend(dt) { var w = dt.getDay(); return w === 0 || w === 6; }
+function prevWeekday(dt) { var d = dt; while (isWeekend(d)) d = addDays(d, -1); return d; }
+// Count back n business days (Monday to Friday; public holidays are NOT known to this tool).
+function subBusinessDays(dt, n) {
+  var d = prevWeekday(dt), c = 0;
+  while (c < n) { d = addDays(d, -1); if (!isWeekend(d)) c++; }
+  return d;
+}
+function addBusinessDays(dt, n) {
+  var d = dt, c = 0;
+  while (c < n) { d = addDays(d, 1); if (!isWeekend(d)) c++; }
+  return d;
+}
+function daysBetween(a, b) { return Math.round((dayOnly(b) - dayOnly(a)) / 86400000); }
+function ymd(dt) { var m = dt.getMonth() + 1, d = dt.getDate(); return dt.getFullYear() + "-" + (m < 10 ? "0" : "") + m + "-" + (d < 10 ? "0" : "") + d; }
+function fmtDate(dt) { return DAY_NAMES[dt.getDay()] + " " + dt.getDate() + " " + MONTH_NAMES[dt.getMonth()] + " " + dt.getFullYear(); }
+function inSurge(dt) { var m = dt.getMonth(); return m === 11 || m <= 3; } // December to April, sources.md:L66
+
+// input: {start:"YYYY-MM-DD", prof, medicare, dva, funds, hicaps, ndis, hasAbn, bizName, gst, hasProda, additional, staff}
+// today: Date (local). Returns {error} or {start, daysAway, steps:[...], summary}
+function buildTimeline(input, today) {
+  today = dayOnly(today);
+  if (!input || !input.start || String(input.start).trim() === "") return {error: "Please enter your planned start date."};
+  var start = parseYMD(String(input.start));
+  if (!start) return {error: "That doesn't look like a real date. Please pick your start date again."};
+  if (start < today) return {error: "That date has already passed. Please enter a start date from today onwards."};
+  if (daysBetween(today, start) > 3 * 366) return {error: "That date is more than three years away. Processing times can change before then, so please enter a date within the next three years."};
+  var p = PROFS[input.prof];
+  if (!p) return {error: "Please choose your profession."};
+
+  var needMedicare = !!(input.medicare || input.dva || input.funds);
+  var steps = [];
+
+  // 1. Registration
+  var reg = {key: "registration", lead: null, latest: null, notes: []};
+  if (p.ahpra) {
+    reg.title = "Ahpra registration (through your National Board)";
+    reg.timeText = "No published processing time for a new registration in our sources. Start here: Medicare requires it.";
+    reg.notes.push("Medicare requires you to \"be registered with Ahpra or a respective board or organisation\".");
+    var nov30 = new Date(today.getFullYear(), 10, 30);
+    if (nov30 < today) nov30 = new Date(today.getFullYear() + 1, 10, 30);
+    if (nov30 <= start) {
+      reg.renewBy = nov30;
+      reg.notes.push("Already registered? Ahpra says health practitioners other than doctors, nurses and midwives renew by 30 November every year (if your registration is provisional or limited, you renew on the anniversary it was first granted instead). Your next 30 November before your start date is " + fmtDate(nov30) + ". If you miss it, there is a one-month late period with a late fee; after that your registration lapses.");
+    }
+  } else {
+    reg.title = "Professional body registration (" + p.name + " has no Ahpra National Board)";
+    reg.timeText = "No published processing time.";
+    reg.notes.push("Services Australia says allied health professionals not registered with Ahpra can apply online, but \"must be registered with a respective board or organisation\".");
+  }
+  steps.push(reg);
+
+  // 2. ABN
+  var abn = {key: "abn", title: "ABN (Australian Business Number)", notes: []};
+  if (input.hasAbn) {
+    abn.done = true;
+    abn.timeText = "You said you already have one.";
+    abn.notes.push("You must update your ABN details within 28 days of becoming aware of a change.");
+  } else {
+    abn.timeText = "If your application is successful, you get your ABN immediately. If you get a reference number instead, the register aims to review it within 20 business days, then sends a letter within 14 days.";
+    abn.latest = subBusinessDays(addDays(start, -ABN_LETTER_DAYS), ABN_REVIEW_BUSINESS_DAYS);
+    abn.latestLabel = "Latest date to apply, to allow for a reference number";
+    abn.tooLate = abn.latest < today;
+    if (abn.tooLate) {
+      abn.ifTodayBy = addDays(addBusinessDays(today, ABN_REVIEW_BUSINESS_DAYS), ABN_LETTER_DAYS);
+    }
+    abn.notes.push("Business days here are counted Monday to Friday. This tool doesn't know about public holidays and counts them as business days, so allow extra if one falls in the period.");
+  }
+  steps.push(abn);
+
+  if (input.bizName) {
+    steps.push({key: "bizname", title: "Business name (ASIC)", timeText: "No published processing time.",
+      notes: ["You must register a business name if you are not trading under your own name. There is a fee.",
+              "Through ASIC Connect you need an ABN, or an ABN reference number if you are applying for one. You can also apply for both at the same time through the Business Registration Service."]});
+  }
+  if (input.gst) {
+    steps.push({key: "gst", title: "GST registration (ATO)", timeText: "No published processing time. Once you are required to register, you need to do so within 21 days.",
+      notes: ["You need an ABN before you register for GST.",
+              "The ATO says you must register when you start a new business and expect GST turnover to reach $75,000 in the first year. Many health services are GST-free: ask your accountant."]});
+  }
+
+  // 3. PRODA + HPOS
+  if (needMedicare || input.staff) {
+    var proda = {key: "proda", title: "Individual PRODA account, linked to HPOS", notes: []};
+    if (input.hasProda) {
+      proda.done = true;
+      proda.timeText = "You said you already have one. Check HPOS is linked.";
+    } else {
+      proda.timeText = "No published processing time.";
+      proda.notes.push("You need an individual PRODA account to use HPOS, where you apply for a provider number online.");
+      proda.notes.push("You use 3 identity documents (or Digital ID). You can't use any services until your identity is verified.");
+    }
+    steps.push(proda);
+  }
+
+  // 4. Medicare provider number
+  if (needMedicare) {
+    var mc = {key: "medicare", title: "Medicare provider number for this location", notes: []};
+    mc.timeText = "Services Australia: \"Most Medicare provider number applications take up to 28 days to process from the date we get your application.\" Some take longer if the Department of Health, Disability and Ageing needs to assess them.";
+    mc.latest = addDays(start, -MEDICARE_DAYS);
+    mc.latestLabel = "Latest date to apply (up to 28 days before your start)";
+    mc.tooLate = mc.latest < today;
+    mc.applyToday = ymd(mc.latest) === ymd(today);
+    if (mc.tooLate) mc.ifTodayBy = addDays(today, MEDICARE_DAYS);
+    if (isWeekend(mc.latest) && !mc.tooLate) {
+      mc.weekend = true;
+      mc.weekdayBefore = prevWeekday(mc.latest);
+      if (mc.weekdayBefore < today) mc.weekdayBefore = null;
+    }
+    mc.surge = inSurge(mc.latest) || inSurge(start);
+    if (mc.surge) {
+      mc.suggested = prevWeekday(addDays(start, -(MEDICARE_DAYS + SURGE_EXTRA_DAYS))); // moved to a weekday if it lands on a weekend
+      mc.suggestedTooLate = mc.suggested < today;
+    }
+    if (!input.medicare) {
+      mc.notes.push(input.dva ? "You didn't tick Medicare, but DVA says: \"To become a DVA service provider you will need to have a Medicare provider number.\"" :
+                                "You didn't tick Medicare, but several health funds take your details from your Medicare provider number.");
+    }
+    mc.notes.push("You need a provider number for each practice location, and you can't claim a Medicare benefit until it is issued for that location. Submit your application before your location start date.");
+    if (input.additional) mc.notes.push("For an additional provider number: when you get it, wait 2 business days before you submit claims with it.");
+    steps.push(mc);
+  }
+
+  // 5. DVA
+  if (input.dva) {
+    var dvaNotes = ["DVA says most healthcare providers are automatically registered when they receive their Medicare provider number.",
+                    "Send form D9537 for each payee provider number so your ABN and GST status are recorded. If you pay GST, you also sign DVA's RCTI agreement."];
+    if (input.prof === "physio" || input.prof === "ot" || input.prof === "psych") {
+      dvaNotes.push("Some provider types must register directly with DVA, including lymphoedema providers (physio and OT), neuropsychologists, and pelvic health and vestibular physiotherapy providers.");
+    }
+    steps.push({key: "dva", title: "DVA (after your provider number arrives)", timeText: "No published processing time.", notes: dvaNotes});
+  }
+
+  // 6. Health funds
+  if (input.funds) {
+    var fn = [];
+    fn.push("Take your details from Medicare, no separate application: Medibank (it also expects you to meet its recognition criteria and standards), nib, Westfund and Bupa (Medicare-registered professions; you also agree to Bupa's Ancillary Provider Terms).");
+    if (input.prof === "osteo") fn.push("GMHBA/Frank: osteopathy is not on GMHBA's no-application list, so check with GMHBA.");
+    else fn.push("GMHBA/Frank: " + p.name + " is on its list of modalities that don't need to apply if registered with Services Australia.");
+    fn.push("HBF: for " + p.name + ", HBF says you must be registered with Medicare Australia.");
+    fn.push("HCF needs its own step: download and send its provider recognition form.");
+    steps.push({key: "funds", title: "Health fund recognition", timeText: "No published processing time for any fund in our sources. Medibank says Medicare notifies it of new provider numbers daily.", notes: fn});
+  }
+
+  // 7. HICAPS
+  if (input.hicaps) {
+    steps.push({key: "hicaps", title: "HICAPS verification request", timeText: "No published processing time.",
+      notes: ["Add your provider details, submit a verification request, and track it in HICAPS Digital. You can claim on a HICAPS terminal once you are verified."]});
+  }
+
+  // 8. NDIS
+  if (input.ndis) {
+    steps.push({key: "ndis", title: "NDIS: decide registered or unregistered", timeText: "No published processing time.",
+      notes: ["Unregistered providers can only support self-managed or plan-managed participants. You must register to support participants with NDIA-managed funding.",
+              "There is no cost to register with the NDIS Commission, but you pay an approved quality auditor for the audit."]});
+  }
+
+  // 9. HPOS delegate
+  if (input.staff) {
+    steps.push({key: "delegate", title: "HPOS delegate for your practice manager", timeText: "No published processing time. Delegation requests and renewals must be actioned within 14 days.",
+      notes: ["Your delegate needs their own PRODA account. A delegation lasts up to 12 months, then you renew it."]});
+  }
+
+  for (var i = 0; i < steps.length; i++) steps[i].order = i + 1;
+
+  // Summary: earliest computed latest-date among steps not done
+  var firstDue = null;
+  for (var j = 0; j < steps.length; j++) {
+    if (steps[j].latest && !steps[j].done && (!firstDue || steps[j].latest < firstDue.latest)) firstDue = steps[j];
+  }
+  var anyTooLate = false;
+  for (var k = 0; k < steps.length; k++) if (steps[k].tooLate) anyTooLate = true;
+  return {start: start, daysAway: daysBetween(today, start), steps: steps, firstDue: firstDue, anyTooLate: anyTooLate,
+          medicare: needMedicare ? steps.filter(function (s) { return s.key === "medicare"; })[0] : null};
+}
+// LOGIC END
+
+(function () {
+  function $(id) { return document.getElementById(id); }
+  function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
+  function render() {
+    var out = $("out");
+    var input = {
+      start: $("start").value, prof: $("prof").value,
+      medicare: $("medicare").checked, dva: $("dva").checked, funds: $("funds").checked, hicaps: $("hicaps").checked, ndis: $("ndis").checked,
+      hasAbn: $("hasAbn").checked, bizName: $("bizName").checked, gst: $("gst").checked, hasProda: $("hasProda").checked,
+      additional: $("additional").checked, staff: $("staff").checked
+    };
+    var r = buildTimeline(input, new Date());
+    out.hidden = false;
+    if (r.error) { out.innerHTML = '<h2>Your timeline</h2><p class="err">' + esc(r.error) + '</p>'; out.scrollIntoView({behavior: "smooth", block: "start"}); return; }
+    var h = '<h2>Your timeline</h2>';
+    h += '<p>Based on what you entered, you plan to start on <b>' + esc(fmtDate(r.start)) + '</b>' +
+         (r.daysAway === 0 ? ' (today).' : ' (' + r.daysAway + ' day' + (r.daysAway === 1 ? '' : 's') + ' from today).') + '</p>';
+    if (r.medicare) {
+      if (r.medicare.tooLate) {
+        h += '<p class="note"><b>Your start date is too soon for the published Medicare time.</b> Even if Services Australia gets your application today, it can take up to 28 days: to ' + esc(fmtDate(r.medicare.ifTodayBy)) + '. You can\'t claim a Medicare benefit until your number is issued for that location. Apply now, and think about a later start date.</p>';
+      } else {
+        h += '<p class="big">Apply for your Medicare provider number by ' + esc(fmtDate(r.medicare.latest)) + '.</p>';
+      }
+    }
+    if (r.firstDue && r.firstDue.key === "abn" && !r.firstDue.tooLate) {
+      h += '<p>If your ABN isn\'t issued straight away, the longest published wait is for the ABN: apply by ' + esc(fmtDate(r.firstDue.latest)) + ' to allow for it.</p>';
+    }
+    h += '<p>Do the steps in this order. Most depend on an earlier one, so the order matters.</p>';
+    r.steps.forEach(function (s) {
+      h += '<div class="step"><h3><span class="n">' + s.order + '</span>' + esc(s.title) + '</h3>';
+      if (s.done) h += '<p><b>Done:</b> ' + esc(s.timeText) + '</p>';
+      else h += '<p><b>Published time:</b> ' + esc(s.timeText) + '</p>';
+      if (s.latest && !s.done) {
+        if (s.tooLate) {
+          h += '<p class="flag">Too late for the full published time. The latest date was ' + esc(fmtDate(s.latest)) + '.' +
+               (s.ifTodayBy ? ' If you apply today, allow until ' + esc(fmtDate(s.ifTodayBy)) + '.' : '') + '</p>';
+        } else {
+          h += '<p>' + esc(s.latestLabel) + ': <span class="when">' + esc(fmtDate(s.latest)) + '</span>' + (s.applyToday ? ' <span class="flag">(that\'s today)</span>' : '') + '</p>';
+        }
+        if (s.weekend) {
+          h += '<p class="flag">That date is a ' + esc(DAY_NAMES[s.latest.getDay()]) + '.' + (s.weekdayBefore ? ' The last weekday before it is ' + esc(fmtDate(s.weekdayBefore)) + '.' : '') + '</p>';
+        }
+        if (s.surge) {
+          h += '<p class="note">Your application period falls in December to April. Services Australia says: "We experience a surge in applications between December and April." Our suggestion (not an official time): start two weeks earlier, by ' + esc(fmtDate(s.suggested)) + (s.suggestedTooLate ? ', which has already passed, so apply as soon as you can.' : '.') + '</p>';
+        }
+      }
+      if (s.notes && s.notes.length) { h += '<ul>'; s.notes.forEach(function (n) { h += '<li>' + esc(n) + '</li>'; }); h += '</ul>'; }
+      h += '</div>';
+    });
+    h += '<p class="note">Where we say "no published processing time", our sources give no figure. Allow extra time, and ask the organisation if you are close to your start date.</p>';
+    h += '<p class="asat">Processing times as at ' + ASAT + ', when the official pages were read. Workers\' compensation, TAC and employing staff are not covered by this tool.</p>';
+    out.innerHTML = h;
+    out.scrollIntoView({behavior: "smooth", block: "start"});
+  }
+  $("go").addEventListener("click", render);
+})();
+</script>
+</body>
+</html>

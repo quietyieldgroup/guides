@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Do I need to lodge a TPAR? Free check (ATO 10% and 50% tests)</title><link rel="canonical" href="https://quietyieldgroup.github.io/guides/tools/tpar-check/"><meta property="og:type" content="website"><meta property="og:site_name" content="QuietYieldGroup Guides"><meta property="og:title" content="Do I need to lodge a TPAR? Free check (ATO 10% and 50% tests)"><meta property="og:description" content="Check if your business must lodge a Taxable payments annual report using the ATO&#x27;s 10% and building 50% tests, with the arithmetic and the due date."><meta property="og:url" content="https://quietyieldgroup.github.io/guides/tools/tpar-check/"><meta property="og:image" content="https://quietyieldgroup.github.io/guides/tpar-tracker/cover.png"><meta property="og:image:width" content="1280"><meta property="og:image:height" content="720"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://quietyieldgroup.github.io/guides/tpar-tracker/cover.png">
+<meta name="description" content="Check if your business must lodge a Taxable payments annual report using the ATO's 10% and building 50% tests, with the arithmetic and the due date.">
+<meta name="robots" content="index,follow">
+<style>
+:root{--ink:#1d2530;--muted:#5a6573;--line:#d9dee5;--bg:#f6f7f9;--card:#fff;--accent:#0b5d4b;--accent2:#e7f3ef;--warn:#8a4b00;--warnbg:#fff5e6}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+main{max-width:680px;margin:0 auto;padding:18px 16px 40px}
+h1{font-size:1.55rem;line-height:1.25;margin:.4em 0 .4em}
+h2{font-size:1.2rem;margin:1.6em 0 .5em}
+h3{font-size:1.05rem;margin:1.2em 0 .4em}
+p{margin:.5em 0}
+a{color:var(--accent)}
+.intro{color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:14px 0}
+label{display:block;font-weight:600;margin:14px 0 6px}
+.hint{display:block;font-weight:400;color:var(--muted);font-size:.92rem;margin-top:2px}
+input[type=number],input[type=date],input[type=text],select{width:100%;font:inherit;padding:12px;border:1px solid #b8c0cb;border-radius:8px;background:#fff;min-height:48px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:10px 0;font-weight:400;margin:0}
+.opt input{width:22px;height:22px;margin-top:2px;flex:0 0 auto}
+button{font:inherit;font-weight:600;width:100%;min-height:50px;margin-top:18px;border:0;border-radius:10px;background:var(--accent);color:#fff;cursor:pointer}
+button.secondary{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.result{background:var(--accent2);border:1px solid #b9dccf;border-radius:12px;padding:16px;margin:16px 0}
+.result[hidden]{display:none}
+.result h2{margin-top:0}
+.big{font-size:1.35rem;font-weight:700}
+.note{background:var(--warnbg);border-left:4px solid var(--warn);padding:10px 12px;border-radius:6px;margin:12px 0;font-size:.95rem}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.95rem}
+th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+td.num,th.num{text-align:right;white-space:nowrap}
+.asat{font-size:.88rem;color:var(--muted)}
+.paid{background:var(--card);border:2px solid var(--accent);border-radius:12px;padding:16px;margin:22px 0}
+.paid .price{font-size:1.25rem;font-weight:700}
+.cta{display:block;text-align:center;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:14px;border-radius:10px;margin:12px 0 8px}
+.cta2{display:block;text-align:center;color:var(--accent);font-weight:600;padding:10px}
+.offer{font-weight:600}
+.disclaimer{font-size:.92rem;color:var(--muted);border-top:1px solid var(--line);margin-top:26px;padding-top:12px}
+.sources{font-size:.9rem;overflow-wrap:anywhere}
+.sources li{margin:6px 0}
+footer{font-size:.85rem;color:var(--muted);margin-top:20px}
+fieldset{border:1px solid var(--line);border-radius:10px;padding:4px 12px 12px;margin:12px 0}
+fieldset[hidden]{display:none}
+legend{font-weight:700;padding:0 6px}
+.radios{display:flex;gap:18px;flex-wrap:wrap}
+.radios .opt{padding:6px 0}
+.err{background:#fdecec;border-left:4px solid #a12626;padding:10px 12px;border-radius:6px;margin:12px 0}
+.err[hidden]{display:none}
+.svc{background:#fff;border:1px solid #b9dccf;border-radius:10px;padding:10px 12px;margin:10px 0}
+.svc h3{margin:.2em 0 .3em}
+.calc{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.92rem;overflow-wrap:anywhere}
+.tag{font-weight:700}
+@media (min-width:700px){body{font-size:17px}h1{font-size:1.9rem}}
+</style>
+</head>
+<body>
+<main>
+<h1>Do I need to lodge a TPAR? Free check</h1>
+<p class="intro">For Australian businesses that pay contractors. Answer a few questions and enter your income figures. You'll see whether the ATO's tests say you must lodge a Taxable payments annual report (TPAR), the arithmetic behind the answer, and the due date.</p>
+
+<form class="card" id="f" onsubmit="return false" novalidate>
+  <label for="fy">Which financial year are you checking?</label>
+  <select id="fy">
+    <option value="2026">2026-27 (1 July 2026 to 30 June 2027)</option>
+    <option value="2025">2025-26 (1 July 2025 to 30 June 2026)</option>
+  </select>
+
+  <label>Does your business have an Australian business number (ABN)?</label>
+  <div class="radios">
+    <label class="opt"><input type="radio" name="abn" value="yes"> Yes</label>
+    <label class="opt"><input type="radio" name="abn" value="no"> No</label>
+  </div>
+
+  <label>Did your business operate for the full financial year?</label>
+  <div class="radios">
+    <label class="opt"><input type="radio" name="full" value="yes"> Yes</label>
+    <label class="opt"><input type="radio" name="full" value="no"> No, part of the year</label>
+  </div>
+
+  <label for="income"><span id="incomeLabel">Your total business income for the year ($)</span>
+    <span class="hint" id="incomeHint">Full year: your current business income for the year.</span></label>
+  <input type="text" id="income" inputmode="decimal" autocomplete="off" placeholder="e.g. 100000">
+
+  <label>Which of these services does your business provide? Tick all that apply.</label>
+  <span class="hint">These are the services that come under the ATO's Taxable payment reporting system (TPRS).</span>
+  <label class="opt"><input type="checkbox" id="on_building"> Building and construction</label>
+  <label class="opt"><input type="checkbox" id="on_cleaning"> Cleaning</label>
+  <label class="opt"><input type="checkbox" id="on_courier"> Courier and road freight</label>
+  <label class="opt"><input type="checkbox" id="on_it"> Information technology (IT)</label>
+  <label class="opt"><input type="checkbox" id="on_security"> Security, investigation or surveillance</label>
+
+  <fieldset id="fs_building" hidden>
+    <legend>Building and construction</legend>
+    <label for="b_rcv">Income your business earned from providing building and construction services this financial year (<span class="fyCur">2026-27</span>) ($)</label>
+    <input type="text" id="b_rcv" inputmode="decimal" autocomplete="off" placeholder="e.g. 60000">
+    <label>This financial year, does 50% or more of your business activity relate to building and construction services?</label>
+    <div class="radios">
+      <label class="opt"><input type="radio" name="b_act" value="yes"> Yes</label>
+      <label class="opt"><input type="radio" name="b_act" value="no"> No</label>
+    </div>
+    <label for="b_prev">The year before (<span class="fyPrev">2025-26</span>): income from building and construction services ($)
+      <span class="hint">Leave both prior-year boxes blank if you weren't in business then.</span></label>
+    <input type="text" id="b_prev" inputmode="decimal" autocomplete="off" placeholder="optional">
+    <label for="b_prevInc">The year before (<span class="fyPrev">2025-26</span>): total business income ($)</label>
+    <input type="text" id="b_prevInc" inputmode="decimal" autocomplete="off" placeholder="optional">
+    <label>Did you pay contractors or subcontractors for building and construction services this financial year?</label>
+    <div class="radios">
+      <label class="opt"><input type="radio" name="b_paid" value="yes"> Yes</label>
+      <label class="opt"><input type="radio" name="b_paid" value="no"> No</label>
+    </div>
+  </fieldset>
+
+  <fieldset id="fs_cleaning" hidden>
+    <legend>Cleaning</legend>
+    <label for="cleaning_rcv">Payments your business received for cleaning services this financial year ($)
+      <span class="hint">Include work done by your employees and by contractors.</span></label>
+    <input type="text" id="cleaning_rcv" inputmode="decimal" autocomplete="off" placeholder="e.g. 10000">
+    <label>Did you pay contractors or subcontractors to provide cleaning services on behalf of your business?</label>
+    <div class="radios">
+      <label class="opt"><input type="radio" name="cleaning_paid" value="yes"> Yes</label>
+      <label class="opt"><input type="radio" name="cleaning_paid" value="no"> No</label>
+    </div>
+  </fieldset>
+
+  <fieldset id="fs_courier" hidden>
+    <legend>Courier and road freight</legend>
+    <p class="hint">If you provide both, the ATO says to combine the payments for both. The tool adds them for you.</p>
+    <label for="courier_rcv">Payments received for courier services this financial year ($)
+      <span class="hint">Include work done by your employees and by contractors. Enter 0 if none.</span></label>
+    <input type="text" id="courier_rcv" inputmode="decimal" autocomplete="off" placeholder="e.g. 5000">
+    <label for="freight_rcv">Payments received for road freight services this financial year ($)
+      <span class="hint">Enter 0 if none.</span></label>
+    <input type="text" id="freight_rcv" inputmode="decimal" autocomplete="off" placeholder="e.g. 0">
+    <label>Did you pay contractors or subcontractors to provide these courier or road freight services on behalf of your business?</label>
+    <div class="radios">
+      <label class="opt"><input type="radio" name="courier_paid" value="yes"> Yes</label>
+      <label class="opt"><input type="radio" name="courier_paid" value="no"> No</label>
+    </div>
+  </fieldset>
+
+  <fieldset id="fs_it" hidden>
+    <legend>Information technology (IT)</legend>
+    <label for="it_rcv">Payments your business received for IT services this financial year ($)
+      <span class="hint">Include work done by your employees and by contractors.</span></label>
+    <input type="text" id="it_rcv" inputmode="decimal" autocomplete="off" placeholder="e.g. 20000">
+    <label>Did you pay contractors or subcontractors, in Australia or overseas, to provide IT services on behalf of your business?</label>
+    <div class="radios">
+      <label class="opt"><input type="radio" name="it_paid" value="yes"> Yes</label>
+      <label class="opt"><input type="radio" name="it_paid" value="no"> No</label>
+    </div>
+  </fieldset>
+
+  <fieldset id="fs_security" hidden>
+    <legend>Security, investigation or surveillance</legend>
+    <label for="security_rcv">Payments your business received for security, investigation or surveillance services this financial year ($)
+      <span class="hint">Include work done by your employees and by contractors.</span></label>
+    <input type="text" id="security_rcv" inputmode="decimal" autocomplete="off" placeholder="e.g. 15000">
+    <label>Did you pay contractors or subcontractors to provide these services on behalf of your business?</label>
+    <div class="radios">
+      <label class="opt"><input type="radio" name="security_paid" value="yes"> Yes</label>
+      <label class="opt"><input type="radio" name="security_paid" value="no"> No</label>
+    </div>
+  </fieldset>
+
+  <div class="err" id="err" hidden role="alert"></div>
+  <button type="button" id="go">Check</button>
+  <button type="button" class="secondary" id="reset">Start again</button>
+</form>
+
+<section class="result" id="out" hidden aria-live="polite"></section>
+
+<section class="paid">
+  <h2>Want to keep your contractor payments ready for the TPAR?</h2>
+  <p>The TPAR Contractor Payments Tracker (2026-27) is an Excel workbook plus an 8-page guide. You list each contractor once (name, ABN, address) and add a row for each payment: date paid, invoice, gross amount, GST, and any tax withheld because no ABN was quoted. The Year summary totals each contractor in whole dollars.</p>
+  <p>Built-in checks flag a missing address, an ABN that fails the check-digit test, a payment dated outside 2026-27, GST above one-eleventh of the gross, and a no-ABN payment with nothing withheld. A Check sheet walks through the same 10% and building and construction tests as this page. The guide covers who must lodge, what to record, which payments to leave out, how lodging works and mistakes to avoid.</p>
+  <p class="price">A$15</p>
+  <a class="cta" href="/guides/tpar-tracker/">See the TPAR tracker (A$15)</a>
+  <a class="cta2" href="/guides/tpar-tracker/free-preview.pdf">Read the free preview (PDF)</a>
+  <p class="offer">Launch offer: 25% off with code LAUNCH25 until 30 November 2026.</p>
+</section>
+
+<p class="disclaimer">General information, not advice; check with the ATO. This tool covers businesses, not government entities. It runs only in your browser: nothing you enter is saved or sent anywhere. Not produced or endorsed by the ATO or any government agency.</p>
+
+<h2>Sources</h2>
+<ul class="sources">
+  <li><a href="https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/reports-and-returns/taxable-payments-annual-report/work-out-if-you-need-to-lodge-a-tpar">Work out if you need to lodge a TPAR</a> (ATO, last updated 20 October 2026, read 17 November 2026)</li>
+  <li><a href="https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/reports-and-returns/taxable-payments-annual-report/work-out-if-you-need-to-lodge-a-tpar/building-and-construction-services">Building and construction services</a> (ATO, read 17 November 2026)</li>
+  <li><a href="https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/reports-and-returns/taxable-payments-annual-report/work-out-if-you-need-to-lodge-a-tpar/cleaning-services">Cleaning services</a> (ATO, read 17 November 2026)</li>
+  <li><a href="https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/reports-and-returns/taxable-payments-annual-report/work-out-if-you-need-to-lodge-a-tpar/courier-services">Courier services</a> (ATO, read 17 November 2026)</li>
+  <li><a href="https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/reports-and-returns/taxable-payments-annual-report/work-out-if-you-need-to-lodge-a-tpar/road-freight-services">Road freight services</a> (ATO, read 17 November 2026)</li>
+  <li><a href="https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/reports-and-returns/taxable-payments-annual-report/work-out-if-you-need-to-lodge-a-tpar/information-technology-services">Information technology services</a> (ATO, read 17 November 2026)</li>
+  <li><a href="https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/reports-and-returns/taxable-payments-annual-report/work-out-if-you-need-to-lodge-a-tpar/security-investigation-or-surveillance-services">Security, investigation or surveillance services</a> (ATO, read 17 November 2026)</li>
+  <li><a href="https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/reports-and-returns/taxable-payments-annual-report/lodge-your-tpar">Lodge your TPAR</a> (ATO, read 17 November 2026)</li>
+  <li><a href="https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/reports-and-returns/taxable-payments-annual-report/lodge-your-tpar/tpar-contractor-details-to-report">TPAR contractor details to report</a> (ATO, read 17 November 2026)</li>
+  <li><a href="https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/reports-and-returns/taxable-payments-annual-report/lodge-your-tpar/tpar-non-lodgment-advice">TPAR non-lodgment advice</a> (ATO, read 17 November 2026)</li>
+  <li><a href="https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/reports-and-returns/due-dates-for-lodging-and-paying">Due dates for lodging and paying</a> (ATO, general weekend and public holiday rule, read 17 November 2026)</li>
+  <li><a href="https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/failure-to-lodge-on-time-penalty">Failure to lodge on time penalty</a> (ATO, read 17 November 2026)</li>
+</ul>
+
+<footer>Published by QuietYieldGroup. <a href="/guides/">More guides and free tools</a></footer>
+</main>
+<script>
+// LOGIC START
+var TPAR = (function () {
+  var SERVICES = [
+    { id: 'building', name: 'Building and construction' },
+    { id: 'cleaning', name: 'Cleaning' },
+    { id: 'courier', name: 'Courier and road freight' },
+    { id: 'it', name: 'Information technology (IT)' },
+    { id: 'security', name: 'Security, investigation or surveillance' }
+  ];
+  var DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+  // Returns {ok:true, cents:int} or {ok:false, blank|bad|negative:true}
+  function parseAmount(raw) {
+    if (raw === undefined || raw === null) return { ok: false, blank: true };
+    var s = String(raw).replace(/[\s$,]/g, '');
+    if (s === '') return { ok: false, blank: true };
+    if (/^-/.test(s)) return { ok: false, negative: true };
+    if (!/^(\d+(\.\d{0,2})?|\.\d{1,2})$/.test(s)) return { ok: false, bad: true };
+    var c = Math.round(parseFloat(s) * 100);
+    if (!isFinite(c) || c > 1e14) return { ok: false, bad: true };
+    return { ok: true, cents: c };
+  }
+
+  function fmtMoney(cents) {
+    var neg = cents < 0; cents = Math.abs(cents);
+    var d = Math.floor(cents / 100), c = cents % 100;
+    var s = String(d).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return (neg ? '-' : '') + '$' + s + (c ? '.' + (c < 10 ? '0' : '') + c : '');
+  }
+
+  // Percentage rounded DOWN to 2 decimals, so 9.999% shows as 9.99% (never as 10%).
+  function pctFloor(numC, denC) {
+    return Math.floor(numC * 10000 / denC) / 100;
+  }
+  function fmtPct(p) {
+    var s = p.toFixed(2).replace(/\.?0+$/, '');
+    return s + '%';
+  }
+  // The ATO 10% test: payments received for the service / business income x 100 >= 10
+  function meetsTen(recC, incC) { return recC * 10 >= incC; }
+  // The ATO 50% building and construction test: >= 50%
+  function meetsFifty(bcC, incC) { return bcC * 2 >= incC; }
+
+  function fmtDate(d) {
+    return DAYS[d.getDay()] + ' ' + d.getDate() + ' ' + MONTHS[d.getMonth()] + ' ' + d.getFullYear();
+  }
+  function fyLabel(y) { return y + '-' + String(y + 1).slice(2); }
+
+  // y = the year the financial year starts (2025 for 2025-26)
+  function dueInfo(y, today) {
+    var due = new Date(y + 1, 7, 28);
+    var dow = due.getDay();
+    var weekend = (dow === 0 || dow === 6);
+    var next = null, before = null;
+    if (weekend) {
+      next = new Date(due.getFullYear(), due.getMonth(), due.getDate() + (dow === 6 ? 2 : 1));
+      before = new Date(due.getFullYear(), due.getMonth(), due.getDate() - (dow === 6 ? 1 : 2));
+    }
+    var t = today ? new Date(today.getFullYear(), today.getMonth(), today.getDate()) : null;
+    return {
+      label: fyLabel(y),
+      start: new Date(y, 6, 1),
+      end: new Date(y + 1, 5, 30),
+      due: due,
+      dueText: fmtDate(due),
+      weekend: weekend,
+      nextBusinessDay: next,
+      nextBusinessDayText: next ? fmtDate(next) : '',
+      businessDayBefore: before,
+      businessDayBeforeText: before ? fmtDate(before) : '',
+      passed: t ? t.getTime() > due.getTime() : false
+    };
+  }
+
+  function amountErr(r, what) {
+    if (r.blank) return 'Please enter ' + what + '. Enter 0 if there was none.';
+    if (r.negative) return what.charAt(0).toUpperCase() + what.slice(1) + ' can\'t be negative.';
+    return 'Please enter ' + what + ' as a number in dollars, for example 25000 or 25,000.50.';
+  }
+
+  function assess(inp) {
+    var errors = [];
+    inp = inp || {};
+    var y = parseInt(inp.fy, 10);
+    if (y !== 2025 && y !== 2026) errors.push('Please choose the financial year you are checking.');
+    if (inp.abn !== 'yes' && inp.abn !== 'no') errors.push('Please say whether your business has an ABN.');
+    if (inp.fullYear !== 'yes' && inp.fullYear !== 'no') errors.push('Please say whether your business operated for the full financial year.');
+    var sv = inp.services || {};
+    var chosen = SERVICES.filter(function (s) { return sv[s.id] && sv[s.id].on; });
+    var due = (y === 2025 || y === 2026) ? dueInfo(y, inp.today) : null;
+
+    if (chosen.length === 0) {
+      if (errors.length) return { ok: false, errors: errors };
+      return { ok: true, overall: 'none', services: [], due: due, partYear: inp.fullYear === 'no', notes: [] };
+    }
+
+    var inc = parseAmount(inp.income);
+    var incC = null;
+    if (!inc.ok) errors.push(amountErr(inc, 'your total business income for the year'));
+    else if (inc.cents === 0) errors.push('Your total business income is $0, so a percentage can\'t be worked out. Please enter your business income for the year (projected for a full year if you started part way through).');
+    else incC = inc.cents;
+
+    var results = [];
+    chosen.forEach(function (s) {
+      var d = sv[s.id];
+      var paid = d.paid;
+      if (paid !== 'yes' && paid !== 'no') errors.push(s.name + ': please say whether you paid contractors for this service.');
+      if (s.id === 'building') {
+        var bc = parseAmount(d.received);
+        if (!bc.ok) errors.push(amountErr(bc, 'your building and construction income for this year'));
+        if (d.activity !== 'yes' && d.activity !== 'no') errors.push('Building and construction: please answer the business activity question.');
+        var pb = parseAmount(d.prevReceived), pi = parseAmount(d.prevIncome), prev = null;
+        if (pb.blank && pi.blank) prev = null;
+        else if (pb.blank || pi.blank) errors.push('Building and construction: for the year before, fill in both boxes or leave both blank.');
+        else if (!pb.ok) errors.push(amountErr(pb, 'last year\'s building and construction income'));
+        else if (!pi.ok) errors.push(amountErr(pi, 'last year\'s total business income'));
+        else if (pi.cents === 0) errors.push('Building and construction: last year\'s total business income is $0. Leave both prior-year boxes blank if you had no income that year.');
+        else if (pb.cents > pi.cents) errors.push('Building and construction: last year\'s building and construction income can\'t be more than last year\'s total business income.');
+        else prev = { bc: pb.cents, inc: pi.cents };
+        if (bc.ok && incC !== null && bc.cents > incC) errors.push('Building and construction income can\'t be more than your total business income.');
+        if (errors.length) return;
+        results.push({ id: s.id, name: s.name, paid: paid, bc: bc.cents, activity: d.activity, prev: prev });
+      } else {
+        var recC = null, parts = null;
+        if (s.id === 'courier') {
+          var c1 = parseAmount(d.courierReceived), c2 = parseAmount(d.freightReceived);
+          if (c1.blank && c2.blank) errors.push('Courier and road freight: please enter the payments you received (0 if none).');
+          else {
+            if (!c1.ok && !c1.blank) errors.push(amountErr(c1, 'payments received for courier services'));
+            if (!c2.ok && !c2.blank) errors.push(amountErr(c2, 'payments received for road freight services'));
+            var a = c1.ok ? c1.cents : 0, b = c2.ok ? c2.cents : 0;
+            recC = a + b; parts = { courier: a, freight: b };
+          }
+        } else {
+          var r = parseAmount(d.received);
+          if (!r.ok) errors.push(amountErr(r, 'payments received for ' + s.name.charAt(0).toLowerCase() + s.name.slice(1) + ' services'));
+          else recC = r.cents;
+        }
+        if (recC !== null && incC !== null && recC > incC) errors.push(s.name + ': payments received for this service can\'t be more than your total business income.');
+        if (errors.length) return;
+        results.push({ id: s.id, name: s.name, paid: paid, rec: recC, parts: parts });
+      }
+    });
+    if (errors.length) return { ok: false, errors: errors };
+
+    var abn = inp.abn;
+    results.forEach(function (r) {
+      r.reasons = [];
+      if (r.id === 'building') {
+        r.tests = [];
+        var t1 = { name: 'This year: 50% or more of business income from building and construction', pct: pctFloor(r.bc, incC), meets: meetsFifty(r.bc, incC),
+          calc: fmtMoney(r.bc) + ' ÷ ' + fmtMoney(incC) + ' × 100 = ' + fmtPct(pctFloor(r.bc, incC)) };
+        var t2 = { name: 'This year: 50% or more of business activity relates to building and construction', meets: r.activity === 'yes', calc: 'Your answer: ' + (r.activity === 'yes' ? 'Yes' : 'No') };
+        var t3 = r.prev ? { name: 'Year before: 50% or more of business income from building and construction', pct: pctFloor(r.prev.bc, r.prev.inc), meets: meetsFifty(r.prev.bc, r.prev.inc),
+          calc: fmtMoney(r.prev.bc) + ' ÷ ' + fmtMoney(r.prev.inc) + ' × 100 = ' + fmtPct(pctFloor(r.prev.bc, r.prev.inc)) }
+          : { name: 'Year before: 50% or more of business income from building and construction', meets: false, calc: 'No figures entered for the year before' };
+        r.tests = [t1, t2, t3];
+        r.primarily = t1.meets || t2.meets || t3.meets;
+        if (!r.primarily) {
+          r.outcome = 'no';
+          r.reasons.push('None of the three 50% tests is met, so your business is not primarily in building and construction. Like the ATO\'s Harry\'s Hardware example, you don\'t report payments to contractors for building and construction work.');
+        } else if (r.paid === 'no') {
+          r.outcome = 'no';
+          r.reasons.push('Your business counts as primarily in building and construction, but you didn\'t pay contractors or subcontractors for building and construction services, so there are no payments to report.');
+        } else if (abn === 'no') {
+          r.outcome = 'no';
+          r.reasons.push('Your business counts as primarily in building and construction, but the ATO\'s conditions include having an ABN, and you said you don\'t have one.');
+        } else {
+          r.outcome = 'lodge';
+          r.reasons.push('At least one 50% test is met, so your business counts as primarily in building and construction. You paid contractors for building and construction services and you have an ABN.');
+        }
+      } else {
+        r.pct = pctFloor(r.rec, incC);
+        r.meets = meetsTen(r.rec, incC);
+        var lead = r.parts ? '(' + fmtMoney(r.parts.courier) + ' courier + ' + fmtMoney(r.parts.freight) + ' road freight) = ' + fmtMoney(r.rec) + '; ' : '';
+        r.calc = lead + fmtMoney(r.rec) + ' ÷ ' + fmtMoney(incC) + ' × 100 = ' + fmtPct(r.pct);
+        if (!r.meets) {
+          if (r.id === 'cleaning' && r.paid === 'yes' && abn === 'yes') {
+            r.outcome = 'choose';
+            r.reasons.push('Cleaning is under 10% of your business income, so you don\'t have to lodge for it. The ATO says you can still choose to lodge a TPAR if you are under the 10% threshold or unsure if you will be under it.');
+          } else {
+            r.outcome = 'no';
+            r.reasons.push('This service is less than 10% of your business income, so the ATO\'s 10% test says you do not need to lodge a TPAR for it.');
+          }
+        } else if (r.paid === 'no') {
+          r.outcome = 'no';
+          r.reasons.push('This service is 10% or more of your business income, but you didn\'t pay contractors to provide it, so there are no contractor payments to report.');
+        } else if (abn === 'no') {
+          r.outcome = 'no';
+          r.reasons.push('This service is 10% or more of your business income and you paid contractors, but the ATO\'s conditions include having an ABN, and you said you don\'t have one.');
+        } else {
+          r.outcome = 'lodge';
+          r.reasons.push('This service is 10% or more of your business income, you paid contractors to provide it, and you have an ABN.');
+        }
+      }
+    });
+
+    var overall = 'no';
+    if (results.some(function (r) { return r.outcome === 'lodge'; })) overall = 'lodge';
+    else if (results.some(function (r) { return r.outcome === 'choose'; })) overall = 'choose';
+
+    var notes = [];
+    var tenSvc = results.filter(function (r) { return r.id !== 'building'; });
+    if (tenSvc.length > 1 && !tenSvc.some(function (r) { return r.meets; })) {
+      var sum = tenSvc.reduce(function (a, r) { return a + r.rec; }, 0);
+      if (meetsTen(sum, incC)) notes.push({ id: 'combined', pct: pctFloor(sum, incC), sum: sum });
+    }
+    if (abn === 'no') notes.push({ id: 'noabn' });
+    var partYear = inp.fullYear === 'no';
+    if (partYear && results.some(function (r) { return r.id === 'building'; })) notes.push({ id: 'partbuilding' });
+
+    return { ok: true, overall: overall, services: results, income: incC, partYear: partYear, due: due, notes: notes };
+  }
+
+  return { SERVICES: SERVICES, parseAmount: parseAmount, fmtMoney: fmtMoney, pctFloor: pctFloor, fmtPct: fmtPct,
+    meetsTen: meetsTen, meetsFifty: meetsFifty, fmtDate: fmtDate, dueInfo: dueInfo, assess: assess };
+})();
+// LOGIC END
+
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  function radio(name) {
+    var el = document.querySelector('input[name="' + name + '"]:checked');
+    return el ? el.value : '';
+  }
+  var ids = ['building', 'cleaning', 'courier', 'it', 'security'];
+  ids.forEach(function (id) {
+    $('on_' + id).addEventListener('change', function () { $('fs_' + id).hidden = !this.checked; });
+  });
+  function updateLabels() {
+    var y = parseInt($('fy').value, 10);
+    var cur = y + '-' + String(y + 1).slice(2), prev = (y - 1) + '-' + String(y).slice(2);
+    Array.prototype.forEach.call(document.querySelectorAll('.fyCur'), function (e) { e.textContent = cur; });
+    Array.prototype.forEach.call(document.querySelectorAll('.fyPrev'), function (e) { e.textContent = prev; });
+    var part = radio('full') === 'no';
+    $('incomeLabel').textContent = part ? 'Your projected business income for a full financial year ($)' : 'Your total business income for the year (' + cur + ') ($)';
+    $('incomeHint').textContent = part ? 'You operated for part of the year, so the ATO says to use projected business income: work out what your business income will be for the next full financial year.' : 'Full year: your current business income for the year.';
+  }
+  $('fy').addEventListener('change', updateLabels);
+  Array.prototype.forEach.call(document.querySelectorAll('input[name="full"]'), function (e) { e.addEventListener('change', updateLabels); });
+  updateLabels();
+
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
+  function gather() {
+    return {
+      fy: $('fy').value, abn: radio('abn'), fullYear: radio('full'), income: $('income').value, today: new Date(),
+      services: {
+        building: { on: $('on_building').checked, received: $('b_rcv').value, activity: radio('b_act'), prevReceived: $('b_prev').value, prevIncome: $('b_prevInc').value, paid: radio('b_paid') },
+        cleaning: { on: $('on_cleaning').checked, received: $('cleaning_rcv').value, paid: radio('cleaning_paid') },
+        courier: { on: $('on_courier').checked, courierReceived: $('courier_rcv').value, freightReceived: $('freight_rcv').value, paid: radio('courier_paid') },
+        it: { on: $('on_it').checked, received: $('it_rcv').value, paid: radio('it_paid') },
+        security: { on: $('on_security').checked, received: $('security_rcv').value, paid: radio('security_paid') }
+      }
+    };
+  }
+
+  function dueHtml(d, overall) {
+    var h = '<h3>When the ' + d.label + ' TPAR is due</h3>';
+    h += '<p>The ' + d.label + ' financial year runs from ' + TPAR.fmtDate(d.start) + ' to ' + TPAR.fmtDate(d.end) + '. The ATO says a TPAR must be lodged by 28 August each year, so the ' + d.label + ' TPAR is due <strong>' + d.dueText + '</strong>.</p>';
+    if (d.weekend) {
+      h += '<p>That date is a weekend. The ATO\'s general due-date rule: when a due date falls on a Saturday, Sunday or public holiday, you can lodge or pay on the first business day after without incurring a penalty or general interest charge. By our count, that is ' + d.nextBusinessDayText + '. The TPAR pages themselves just say 28 August, and we haven\'t checked public holidays, so the safe choice is to lodge by ' + d.businessDayBeforeText + '.</p>';
+    }
+    if (d.passed && overall !== 'none') {
+      h += '<p class="note">That date has passed. The ATO\'s failure to lodge on time penalty covers taxable payments annual reports. The base penalty is one penalty unit for every 28 days (or part of 28 days) a report is overdue, up to 5 penalty units; it is multiplied by 2 for a medium withholder and by 5 for a large withholder. If you needed to lodge and haven\'t, talk to the ATO or your agent.</p>';
+    }
+    return h;
+  }
+
+  function render(res) {
+    var out = $('out');
+    var h = '<h2>Your result</h2>';
+    if (res.overall === 'none') {
+      h += '<p class="big">Based on what you entered, these tests don\'t require a TPAR.</p>';
+      h += '<p>You didn\'t tick any of the services that come under the Taxable payment reporting system (building and construction, cleaning, courier and road freight, IT, and security, investigation or surveillance). The tests on this page only apply to those services.</p>';
+      h += '<p>The ATO says you should lodge a TPAR non-lodgment advice form if you didn\'t pay contractors for services. It is in ATO online services.</p>';
+    } else {
+      var big = res.overall === 'lodge' ? 'Based on what you entered, you must lodge a TPAR for ' + res.due.label + '.'
+        : res.overall === 'choose' ? 'Based on what you entered, you don\'t need to lodge a TPAR for ' + res.due.label + ', but you may choose to.'
+        : 'Based on what you entered, you don\'t need to lodge a TPAR for ' + res.due.label + '.';
+      h += '<p class="big">' + big + '</p>';
+      h += '<p>Total business income used: ' + TPAR.fmtMoney(res.income) + (res.partYear ? ' (projected for a full year, because you operated for part of the year)' : ' (current business income for the year)') + '.</p>';
+      res.services.forEach(function (r) {
+        var tag = r.outcome === 'lodge' ? 'Must lodge' : r.outcome === 'choose' ? 'Don\'t need to lodge (you may choose to)' : 'Don\'t need to lodge';
+        h += '<div class="svc"><h3>' + esc(r.name) + ': <span class="tag">' + tag + '</span></h3>';
+        if (r.id === 'building') {
+          h += '<p>The 10% test doesn\'t apply to building and construction. Instead the ATO asks if your business is primarily in building and construction: any one of these is enough.</p><table>';
+          r.tests.forEach(function (t) {
+            h += '<tr><td>' + esc(t.name) + '<br><span class="calc">' + esc(t.calc) + '</span></td><td class="num">' + (t.meets ? 'Met' : 'Not met') + '</td></tr>';
+          });
+          h += '</table>';
+        } else {
+          h += '<p class="calc">' + esc(r.calc) + '</p>';
+          h += '<p>The ATO test: 10% or more of your business income means you must lodge (if you paid contractors for the service and have an ABN); less than 10% means you do not need to.</p>';
+        }
+        r.reasons.forEach(function (x) { h += '<p>' + esc(x) + '</p>'; });
+        h += '</div>';
+      });
+      res.notes.forEach(function (n) {
+        if (n.id === 'combined') h += '<p class="note">Each service is under 10% on its own, but together they come to ' + TPAR.fmtMoney(n.sum) + ', which is ' + TPAR.fmtPct(n.pct) + ' of your business income. The ATO\'s general page says "If the total payments you receive for TPRS services are 10% or more", while its formula works one service at a time. The pages don\'t give an example with several services, so check with the ATO or your agent.</p>';
+        if (n.id === 'noabn') h += '<p class="note">You said your business has no ABN. The ATO\'s conditions for lodging include having an ABN, so the result above follows that. If you do have an ABN, change the answer and check again.</p>';
+        if (n.id === 'partbuilding') h += '<p class="note">You operated for part of the year. The ATO gives the projected-income rule in its general steps; its building and construction page doesn\'t say how part-year income works for the 50% test. Check with the ATO or your agent if the answer is close.</p>';
+      });
+      if (res.overall === 'lodge') {
+        h += '<h3>What goes in the TPAR</h3>';
+        h += '<p>Report the payments you made to contractors for each service marked "Must lodge", in whole dollars only (exclude cents). Payments to employees are not reported. For each contractor, the ATO asks for: their ABN (if known), name and address, the gross amount paid for the year (including GST and any tax withheld), the total GST you paid them, and the total tax withheld where an ABN was not quoted.</p>';
+        h += '<p>Lodge online: through business software, ATO Online services, or your registered tax or BAS agent. TPAR paper lodgments are no longer accepted after 28 August 2025.</p>';
+      } else {
+        h += '<p>If you don\'t need to lodge a TPAR, the ATO says you can submit a non-lodgment advice (NLA) form through ATO online services. If you no longer pay contractors, you can also use it to say you won\'t need to lodge in the future.</p>';
+      }
+    }
+    if (res.due) h += dueHtml(res.due, res.overall);
+    h += '<p class="asat">Rules as at the ATO pages read 17 November 2026. This check covers businesses, not government entities.</p>';
+    out.innerHTML = h;
+    out.hidden = false;
+    out.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  $('go').addEventListener('click', function () {
+    var res = TPAR.assess(gather());
+    var err = $('err');
+    if (!res.ok) {
+      err.innerHTML = '<strong>Please check these:</strong><ul>' + res.errors.map(function (e) { return '<li>' + esc(e) + '</li>'; }).join('') + '</ul>';
+      err.hidden = false;
+      $('out').hidden = true;
+      err.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+    err.hidden = true;
+    render(res);
+  });
+  $('reset').addEventListener('click', function () {
+    $('f').reset();
+    ids.forEach(function (id) { $('fs_' + id).hidden = true; });
+    $('err').hidden = true;
+    $('out').hidden = true;
+    updateLabels();
+  });
+})();
+</script>
+</body>
+</html>
